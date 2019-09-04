@@ -37,7 +37,7 @@ package LeetCode;
 //
 // Example 2:
 //
-//Input: ["5","-2","4","C","D","9","+","+"]
+//Input: ["5","-2","4","C","-4","9","+","+"]
 //Output: 27
 //Explanation:
 //Round 1: You could get 5 points. The sum is: 5.
@@ -60,15 +60,56 @@ import java.util.Stack;
 
 public class BaseballGame {
 
-//    public int calPoints(String[] ops) {
-//
-//    }
+    private static int calPoints(String[] ops) {
 
+        Stack<Integer> stack = new Stack<Integer>();
 
+        for (int i = 0; i < ops.length; i++) {
+            try {
+                int num = Integer.parseInt(ops[i]);
+                stack.push(num);
+            } catch (Exception e) {
+                if(ops[i] == "C"){
+                    System.out.println("C means cancel");
+                    stack.pop();// remove the last score from the stack
+                }
 
+                if(ops[i] == "D"){
+                    System.out.println("D means double");
+                    int doubleScore = stack.peek() * 2;
+                    stack.push(doubleScore);
+                }
 
+                if(ops[i] == "+"){
+                    System.out.println("+ means sum the score");
+                    int lastOne = stack.peek();
+                    stack.pop();
+//                    int secondLastOne = stack.pop();// not working since the pop will be executed. Use peek when only need the number of the certain index
 
-        public static void main(String[] args) {
+                    int secondLastOne = stack.peek();
+                    int sum = lastOne + secondLastOne;
+                    stack.push(lastOne);
+                    stack.push(sum);
+                }
+            }
 
         }
+
+        int sum = 0;
+        while (stack.size() > 0) sum+= stack.pop();
+        System.out.println("The final score is " + sum);
+        return sum;
+
+    }
+
+
+
+
+    public static void main(String[] args) {
+//        String[] arr = {"2", "3", "C", "D", "+"};
+        String[] arr = {"5","-2","4","C","D","9","+","+"};
+        calPoints(arr);
+
+    }
 }
+
