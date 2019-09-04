@@ -68,7 +68,9 @@ public class BaseballGame {
             try {
                 int num = Integer.parseInt(ops[i]);
                 stack.push(num);
-            } catch (Exception e) {
+            }
+
+            catch (Exception e) {
                 if(ops[i] == "C"){
                     System.out.println("C means cancel");
                     stack.pop();// remove the last score from the stack
