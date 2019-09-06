@@ -7,11 +7,12 @@ public class LinkedListExample {
     // find length of linked list
 //    LinkedListNode node = new LinkedListNode(7);
 
-    public static int count(LinkedListNode root){
-        int count = 0 ;
+    public static int count(LinkedListNode root){// count the LinkedList length
+        int count = 0 ;// ? why count start with 1
         LinkedListNode temp = root;
         while(temp != null){
-            count = count + 1;
+            count ++;
+            System.out.println(temp.val);
             temp = temp.next;
         }
         return count;
