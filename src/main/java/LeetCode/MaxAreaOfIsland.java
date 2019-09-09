@@ -9,33 +9,25 @@ public class MaxAreaOfIsland {
         int maxArea = 0;
         for(int i=0 ; i < grid.length; i++){
             for(int j=0; j < grid[i].length; j++){
-                int area = flipAndCount(i,j,grid);
-                    areaStack.push(area);
+                if(grid[i][j]==1) {
+                    int area = flipAndCount(i, j, grid);
+                    maxArea = Math.max(maxArea, areaStack.push(area));
+                }
             }
-        }
-
-        for(int i = 0 ; i < areaStack.size(); i++){
-            int area = areaStack.pop();
-            if(area > maxArea) maxArea = area;
         }
         return maxArea;
     }
 
     public int flipAndCount(int i, int j, int[][] grid){
-        int count = 0;
-        if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length) {
-            return count;
-        }
+        if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] == 0)
+            return 0;
 
-        if (grid[i][j] == 1) {
-            count++;
-            grid[i][j] = 0; // flip the 1 to 0 after count
-            flipAndCount(i, j - 1, grid);
-            flipAndCount(i, j + 1, grid);
-            flipAndCount(i - 1, j, grid);
-            flipAndCount(i + 1, j, grid);
-        }
-        return count;
+        grid[i][j] = 0;
+        return (1 + flipAndCount(i, j - 1, grid)+
+        flipAndCount(i, j + 1, grid)+
+        flipAndCount(i - 1, j, grid)+
+        flipAndCount(i + 1, j, grid));
+
     }
 
     public static void main(String[] args) {
