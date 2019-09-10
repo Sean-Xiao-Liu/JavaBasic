@@ -1,17 +1,20 @@
 package LeetCode;
 
+import org.omg.CORBA.MARSHAL;
+
 import java.util.Stack;
 
 public class MaxAreaOfIsland {
     public int maxAreaOfIsland(int[][] grid) {
-        Stack<Integer> areaStack = new Stack<Integer>();
+//        Stack<Integer> areaStack = new Stack<Integer>();// stack will slow down the execution speed
 
         int maxArea = 0;
         for(int i=0 ; i < grid.length; i++){
             for(int j=0; j < grid[i].length; j++){
                 if(grid[i][j]==1) {
                     int area = flipAndCount(i, j, grid);
-                    maxArea = Math.max(maxArea, areaStack.push(area));
+//                    maxArea = Math.max(maxArea, areaStack.push(area));// unnecessary
+                    maxArea = Math.max(maxArea,area);
                 }
             }
         }
