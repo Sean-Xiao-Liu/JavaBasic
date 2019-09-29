@@ -65,7 +65,7 @@ public class ValidParentheses {
                 if(c == '[' ) stack.push(']');
             } else {
                 if(stack.isEmpty()) return false; // right parentheses comes first, which is false
-                if(c != stack.pop()) return false;
+                if(c != stack.pop()) return false; // pop will be executed
             }
         }
         return (stack.empty()) ? true : false; //
