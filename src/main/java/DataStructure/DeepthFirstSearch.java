@@ -13,6 +13,10 @@ public class DeepthFirstSearch {
         left.right = new TreeNode(5);
         right.left = new TreeNode(6);
         right.right = new TreeNode(7);
+        left.left.left = new TreeNode(8);
+        left.left.right = new TreeNode(9);
+        left.right.right = new TreeNode(10);
+        right.right.left = new TreeNode(11);
         /*
         *  the tree looks like:
         *             1
@@ -20,6 +24,8 @@ public class DeepthFirstSearch {
         *          2     3
         *        /  \   /  \
         *       4    5 6    7
+        *      / \    \    /
+        *     8   9    10 11
         * */
         System.out.println("test result of pre-order DFS");
         test.preOrder(root);
@@ -61,8 +67,4 @@ public class DeepthFirstSearch {
             return;
         }
     }
-
-
-
-
 }
