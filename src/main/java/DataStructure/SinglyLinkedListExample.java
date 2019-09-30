@@ -1,15 +1,13 @@
 package DataStructure;
 
-import sun.awt.image.ImageWatched;
-
-public class LinkedListExample {
+public class SinglyLinkedListExample {
 
     // find length of linked list
 //    LinkedListNode node = new LinkedListNode(7);
 
-    public static int count(LinkedListNode root){// count the LinkedList length
+    public static int count(SinglyLinkedListNode root){// count the LinkedList length
         int count = 0 ;// ? why count start with 1
-        LinkedListNode temp = root;
+        SinglyLinkedListNode temp = root;
         while(temp != null){
             count ++;
             System.out.println(temp.val);
@@ -18,11 +16,11 @@ public class LinkedListExample {
         return count;
     }
 
-    public static boolean hasLoop(LinkedListNode root){
+    public static boolean hasLoop(SinglyLinkedListNode root){
         if (root == null) return false;
 
-        LinkedListNode fast = root;
-        LinkedListNode slow = root;
+        SinglyLinkedListNode fast = root;
+        SinglyLinkedListNode slow = root;
 
             do{
                 fast = fast.next;
@@ -37,12 +35,12 @@ public class LinkedListExample {
             }
     }
 
-    public static LinkedListNode mergePoint(LinkedListNode root){
+    public static SinglyLinkedListNode mergePoint(SinglyLinkedListNode root){
         if(!hasLoop(root)) //no loop
             return null;
         //find position of first meet point
-        LinkedListNode fast=root;
-        LinkedListNode slow=root;//fast and slow pointer
+        SinglyLinkedListNode fast=root;
+        SinglyLinkedListNode slow=root;//fast and slow pointer
         do{
             fast=fast.next;
             fast=fast.next;
@@ -58,9 +56,9 @@ public class LinkedListExample {
 
 
     public static void main(String[] args) {
-        LinkedListNode root = new LinkedListNode(2);
-        root.next = new LinkedListNode(4);
-        root.next.next = new LinkedListNode(6);
+        SinglyLinkedListNode root = new SinglyLinkedListNode(2);
+        root.next = new SinglyLinkedListNode(4);
+        root.next.next = new SinglyLinkedListNode(6);
         root.next.next.next = root.next; // construct a linked list with loop
 //        int num = count(root);
 //        System.out.println(num);

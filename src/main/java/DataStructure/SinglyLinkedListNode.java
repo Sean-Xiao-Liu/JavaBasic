@@ -1,11 +1,11 @@
 package DataStructure;
 
 // single linked list, the node only contains the position info of the next node
-public class LinkedListNode {
+public class SinglyLinkedListNode {
     public int val;
-    public LinkedListNode next;
+    public SinglyLinkedListNode next;
 
-    public LinkedListNode(int val){
+    public SinglyLinkedListNode(int val){
         this.val=val;
     }
 }
