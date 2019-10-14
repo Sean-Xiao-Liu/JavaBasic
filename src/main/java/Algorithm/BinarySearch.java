@@ -22,13 +22,13 @@ public class BinarySearch {
             }
         }
 
-        return null;
+        return -1;
     }
 
     public static void main(String[] args) {
-        int[] myList = {1, 3, 5, 6, 7 ,9,10,11};
+        int[] myList = {1,2,5,5,5,9};
 
-        System.out.println(binarySearch(myList, 3)); // 1
+        System.out.println(binarySearch(myList, 10)); // 1
 //        System.out.println(binarySearch(myList, -1)); // null
     }
 }
