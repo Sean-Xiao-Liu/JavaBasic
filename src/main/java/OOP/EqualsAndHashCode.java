@@ -27,6 +27,7 @@ public class EqualsAndHashCode{
         employees.add(employee1);
         employees.add(employee2);
         System.out.println(employees.toString());// fixed up override the
+        System.out.println(employees);
     }
 }
 
