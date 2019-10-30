@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TwoSum {
+    /*** method 1 using HashMap ***/
     public int[] twoSum(int[] nums, int target){
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int i = 0; i < nums.length; i++) {
@@ -17,11 +18,25 @@ public class TwoSum {
         throw new IllegalArgumentException("No two sum solution");
     }
 
+    /*** method 2 brutal force***/
+    public static int[] twoSum2(int[] nums, int target){
+        for(int i = 0 ; i < nums.length; i++){
+            for(int j = i+1; j < nums.length; j++){
+                int temp = nums[i] + nums[j];
+                if(temp == target) return new int[] {i,j};
+            }
+        }
+        throw new IllegalArgumentException("No two sum solution");
+    }
+
+
     public static void main(String[] args) {
         TwoSum test = new TwoSum();
         int[] nums = {6,5,3,2,9};
         int target = 15;
         int[] result = test.twoSum(nums,target);
+        int[] result2 = twoSum2(nums,target);
         System.out.println(Arrays.toString(result));
+        System.out.println(Arrays.toString(result2));
     }
 }
