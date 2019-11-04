@@ -7,7 +7,7 @@ public class LongestCommonPrefix {
 //        // if the string array is empty, then there is no prefix
 //        if(strs.length == 0 || strs == null) return "";
 //
-//        // set the prefix to be the fist string in string array
+//        // set the prefix to be the first string in string array
 //        String prefix = strs[0];
 //
 //        for (int i = 1; i < strs.length; i++)

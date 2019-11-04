@@ -25,7 +25,7 @@ public class ReverseInteger {
         while (x != 0){
             int reminder = x % 10; // get the unit digit of int x
             int quotient = x / 10; // get all other digit of int x
-            x = quotient; 
+            x = quotient;
             temp = ans * 10 + reminder; // to create a new number
             if((temp - reminder)/10 != ans) return 0; // prevent overflow
             ans = temp;
