@@ -2,30 +2,30 @@
 
 CREATE TABLE Students
 (
-    id bigserial  PRIMARY KEY,
+    id bigint  PRIMARY KEY,
     name varchar(50) ,
-    age datetime_interval_code ,
+    age DATE ,
     gender varchar(50)
 );
 
 CREATE TABLE Teachers
 (
-    id bigserial PRIMARY KEY ,
+    id bigint PRIMARY KEY ,
     name varchar(10)
 );
 
 CREATE TABLE Classes
 (
-    id bigserial PRIMARY KEY,
+    id bigint PRIMARY KEY,
     name varchar(50),
-    teacher_id bigserial
+    teacher_id bigint
 );
 
 CREATE TABLE Grades
 (
-    id bigserial PRIMARY KEY,
-    student_id bigserial ,
-    class_id bigserial ,
+    id bigint PRIMARY KEY,
+    student_id bigint ,
+    class_id bigint ,
     score decimal(18,1)
 
 );
