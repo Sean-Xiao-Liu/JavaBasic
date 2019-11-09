@@ -60,9 +60,43 @@ public class RomanToInteger {
         return result;
     }
 
+
+
+
+
+
+
+
+
+    /*** method 2 redo , 11/9/19***/
+
+    public static int romanToInt2(String s) {
+        HashMap<Character,Integer> map = new HashMap<>();
+        map.put('I' , 1);
+        map.put('V' , 5);
+        map.put('X' ,10);
+        map.put('L' , 50);
+        map.put('C' , 100);
+        map.put('D' , 500);
+        map.put('M' , 1000);
+
+        int i = 0 , j = 1 , result = 0;
+        char[] chars = s.toCharArray();
+        for(;j<chars.length;i++,j++){
+            if(map.get(chars[i])>map.get(chars[j])){
+                result += map.get(chars[i]);
+            } else {
+                result -= map.get(chars[i]);
+            }
+        }
+        result += map.get(chars[i]);
+        return result;
+    }
+
     public static void main(String[] args) {
         String s = "MCMXCIV";
         System.out.println("The number is " + romanToInt(s));
+        System.out.println("The number is " + romanToInt2(s));
 //        System.out.println(s.toCharArray()[1]);
     }
 
