@@ -35,8 +35,34 @@ public class RemoveDuplicatesFromSortedArray {
         return slow+1;// the index is the length minus 1
     }
 
+    /*** method 1 v2 redo , 11/10/19***/
+    public static int removeDuplicates2(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        for(int i = 0 ; i < nums.length;i++) set.add(nums[i]);
+        return set.size();
+    }
+
+    /*** method 2 v2 redo , 11/10/19***/
+    public static int removeDuplicates3(int[] nums) {
+        if(nums.length == 0 || nums.length == 1) return nums.length;
+        int fast = 0;
+        int slow = 0;
+        while(fast < nums.length){
+            if(nums[slow] == nums[fast]){
+                fast++;
+            }else{
+                slow++; // slow pointer move first since hte next index should be changed
+                nums[slow] = nums[fast];
+                fast++;
+            }
+        }
+        return slow+1;
+    }
+
     public static void main(String[] args) {
         int[] nums = {0,0,1,1,1,2,2,3,3,4};
-        System.out.println(removeDuplicates(nums));
+//        System.out.println(removeDuplicates(nums));
+        System.out.println(removeDuplicates2(nums));
+        System.out.println(removeDuplicates3(nums));
     }
 }
