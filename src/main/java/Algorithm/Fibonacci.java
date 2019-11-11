@@ -2,7 +2,7 @@ package Algorithm;
 
 public class Fibonacci {
 
-    // method 1
+    // method 1 recursive
     public static int fib(int n){
         if(n == 0){
             return 1;

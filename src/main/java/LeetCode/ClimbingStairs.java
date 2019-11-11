@@ -24,8 +24,21 @@ public class ClimbingStairs {
         return second;
     }
 
+    /*** redo , 11/10/19***/
+    public static int climbStairs2(int n){
+        if (n == 0 || n == 1) return 1;
+        int[] result = new int[n+1];// put case of 0 stairs there
+        result[0] = 1;
+        result[1] = 1;
+        for(int i = 2; i < result.length; i++){
+            result[i] = result[i-1] + result[i-2];
+        }
+        return result[n];// the last digit of array
+    }
+
     public static void main(String[] args) {
         int stairs = 10;
         System.out.println("There are " +climbStairs(stairs) + " ways to climb " + stairs + " stairs");
+        System.out.println(climbStairs2(stairs));
     }
 }
