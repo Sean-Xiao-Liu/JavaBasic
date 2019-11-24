@@ -23,10 +23,12 @@ public class ShortestSubstring {
      ***/
 
     // define the number of possible distinct chars
-    static final int MAXCHARS = 256;
+
     public static String shortestSubstring(String str){
 
         // count all distinct characters in the given string
+
+        final int MAXCHARS = 256;
         int stringLength = str.length();
         boolean[] visited = new boolean[MAXCHARS];
         int distinctCount = 0 ;
@@ -37,16 +39,55 @@ public class ShortestSubstring {
             }
         }
 
+        //start
+        int start = 0, start_index = -1;
+        int min_len = Integer.MAX_VALUE;
 
+        int count = 0;
+        int[] curr_count =  new int[MAXCHARS];
 
+        for (int j=0; j<stringLength; j++)
+        {
+            // Count occurrence of characters of string
+            curr_count[str.charAt(j)]++;
 
+            // If any distinct character matched,
+            // then increment count
+            if (curr_count[str.charAt(j)] == 1 ) // if the char showed up for the first time
+                count++; // count how many distinct characters have showed up already.
 
-        return "lol";
+            // if all the characters are matched
+            if (count == distinctCount)
+            {
+                // Try to minimize the window i.e., check if
+                // any character is occurring more no. of times
+                // than its occurrence in pattern, if yes
+                // then remove it from starting and also remove
+                // the useless characters.
+                while (curr_count[str.charAt(start)] > 1) // start is the first index of the given string
+                {
+                    if (curr_count[str.charAt(start)] > 1)
+                        curr_count[str.charAt(start)]--;
+                    start++;
+                }
+
+                // Update window size
+                int len_window = j - start + 1;
+                if (min_len > len_window)
+                {
+                    min_len = len_window;
+                    start_index = start;
+                }
+            }
+        }
+        // Return substring starting from start_index
+        // and length min_len
+        return str.substring(start_index, start_index+min_len);
 
     }
 
     public static void main(String[] args) {
-        String test = "abbac";
+        String test = "aaaabbac";
         System.out.println(shortestSubstring(test));
     }
 }
