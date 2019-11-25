@@ -48,11 +48,11 @@ public class TwoSum {
         TwoSum test = new TwoSum();
         int[] nums = {6,5,3,2,9};
         int target = 15;
-        int[] result = test.twoSum(nums,target);
-        int[] result2 = twoSum2(nums,target);
+//        int[] result = test.twoSum(nums,target);
+//        int[] result2 = twoSum2(nums,target);
         int[] result3 = twoSum3(nums,target);
-        System.out.println(Arrays.toString(result));
-        System.out.println(Arrays.toString(result2));
+//        System.out.println(Arrays.toString(result));
+//        System.out.println(Arrays.toString(result2));
         System.out.println(Arrays.toString(result3));
     }
 }
