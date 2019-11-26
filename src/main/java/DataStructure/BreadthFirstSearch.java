@@ -32,17 +32,17 @@ public class BreadthFirstSearch {
          *      / \    \    /
          *     8   9    10 11
          * */
-        test.largestValues(root);
+        test.largestValuesOfEachLayer(root);
 
 
 
     }
 
-    public List<Integer> largestValues(TreeNode root) {
-        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+    public List<Integer> largestValuesOfEachLayer(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<TreeNode>(); // notice the queue is an arrayList
         List<Integer> result = new ArrayList<Integer>();
         queue.offer(root);
-        while (!(queue.isEmpty())) {
+        while (!(queue.isEmpty())) { // while queue is not empty
             int temp = 0;
             int size = queue.size();
             for (int i = 0; i < size; i++) {
