@@ -29,7 +29,7 @@ public class BackTracking {
     }
 
     public static void main(String[] args) {
-        String text = "abcd";
+        String text = "123";
         int length = text.length();
         permute(text,0,length-1);
     }
