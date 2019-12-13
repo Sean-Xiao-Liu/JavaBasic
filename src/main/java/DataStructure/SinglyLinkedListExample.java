@@ -41,13 +41,13 @@ public class SinglyLinkedListExample {
         //find position of first meet point
         SinglyLinkedListNode fast=root;
         SinglyLinkedListNode slow=root;//fast and slow pointer
-        do{
+        do{ // determine the merge point
             fast=fast.next;
             fast=fast.next;
             slow=slow.next;
         }while(fast!=slow);
 
-        while(root!=slow){
+        while(root!=slow){ // pop the merge point
             root=root.next;
             slow=slow.next;
         }

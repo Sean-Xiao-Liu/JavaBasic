@@ -31,6 +31,7 @@ public class SelectionSort {
                     index = j;
                 }
 
+                // swap arr[i] and arr[index], make sure arr[i] is always the smallest one
                 int temp = arr[i];
                 arr[i] = arr[index];
                 arr[index] = temp;

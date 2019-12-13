@@ -33,11 +33,25 @@ public class ReverseString {
 
     }
 
-    public static void main(String[] args) {
-        char[] test = {'a','b','c'};
-        reverseString2(test);
-        for(int i = 0; i < test.length; i++){
-            System.out.println(test[i]);
+    /***method 3 use recursion ***/
+    public static String reverseString3(String string)
+    {
+        if (string.isEmpty()){
+            return string;
         }
+        //Calling function recursively
+        return reverseString3(string.substring(1)) + string.charAt(0);
+    }
+
+
+
+
+    public static void main(String[] args) {
+        String blogName = "How To Do In Java ";
+
+        String reverseString = reverseString3(blogName);
+
+        System.out.println(reverseString);
+
     }
 }
