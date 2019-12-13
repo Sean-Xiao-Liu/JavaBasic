@@ -103,13 +103,7 @@ public class RemoveNthNodeFromEndOfList {
     }
 }
 
-class ListNode{
-    int val;
-    ListNode next;
-    public ListNode(int x){
-        this.val = x;
-    }
-}
+
 
 
 
