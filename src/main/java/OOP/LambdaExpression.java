@@ -22,7 +22,7 @@ public class LambdaExpression implements LambdaInterface{
 }
 
 interface LambdaInterface{
-    void printContent(String text);
+    void printContent(String text); //
 
     static void printText(String text){
         System.out.println(text);
