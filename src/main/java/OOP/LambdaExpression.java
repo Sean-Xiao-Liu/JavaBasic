@@ -21,8 +21,9 @@ public class LambdaExpression implements LambdaInterface{
     }
 }
 
+
 interface LambdaInterface{
-    void printContent(String text); //
+    void printContent(String text); // The interface is still functional interface as long as it has only one abstract method
 
     static void printText(String text){
         System.out.println(text);
@@ -31,12 +32,5 @@ interface LambdaInterface{
     abstract class AbstractText implements LambdaInterface{
 
     }
-
-    class AnotherClass extends AbstractText{
-
-        @Override
-        public void printContent(String text) {
-
-        }
-    }
 }
+

@@ -1,0 +1,20 @@
+CREATE TABLE Activity(
+    ID VARCHAR(50),
+    START_TIME VARCHAR(50),
+    END_TIME VARCHAR(50)
+);
+
+-- ALTER TABLE Activity
+-- ADD COLUMN START_TIME_HMS TIME,
+-- ADD COLUMN END_TIME_HMS TIME;
+--
+-- UPDATE Activity SET Activity.START_TIME_HMS = CAST(START_TIME AS time );
+
+INSERT INTO Activity
+VALUES
+ ('100', '10:00', '12:00'),
+ ('100', '10:15', '12:30'),
+ ('100', '12:15', '12:45'),
+ ('100', '13:00', '14:00'),
+ ('200', '10:15', '10:30'),
+ ('200', '10:20', '10:45');
