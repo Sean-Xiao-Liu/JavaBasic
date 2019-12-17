@@ -1,4 +1,4 @@
-package OOP;
+package CoreJava;
 
 public class Inheritance extends Calculation {
     public void multiplication(int x, int y) {

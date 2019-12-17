@@ -1,4 +1,4 @@
-package OOP;
+package CoreJava;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;

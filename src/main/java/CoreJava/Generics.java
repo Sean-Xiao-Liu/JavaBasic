@@ -1,4 +1,4 @@
-package OOP;
+package CoreJava;
 
 import java.util.ArrayList;
 import java.util.List;

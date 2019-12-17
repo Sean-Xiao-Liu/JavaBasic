@@ -1,4 +1,4 @@
-package OOP;
+package CoreJava;
 
 import java.util.HashSet;
 import java.util.Iterator;

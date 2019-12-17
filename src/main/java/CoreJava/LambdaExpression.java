@@ -1,6 +1,4 @@
-package OOP;
-
-import java.util.Arrays;
+package CoreJava;
 
 public class LambdaExpression implements LambdaInterface{
     @Override

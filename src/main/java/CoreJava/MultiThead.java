@@ -1,4 +1,4 @@
-package OOP;
+package CoreJava;
 
 public class MultiThead extends Thread{
     @Override
