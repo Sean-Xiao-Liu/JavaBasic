@@ -8,7 +8,7 @@ public class GroupAnagrams {
         Map<String,List> map = new HashMap<>();
 
         // transfer each string to char array and then sort
-        for(String s : strs){ // can't use
+        for(String s : strs){ // can't use char[] array as key since the containsKey method will fail
             char[] chars = s.toCharArray();
             Arrays.sort(chars);
             String keyString = new String(chars); // transfer char array to string
