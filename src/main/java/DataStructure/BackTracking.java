@@ -12,7 +12,6 @@ public class BackTracking {
             {
                 str = swap(str,h,i);
                 permute(str, h+1, t);
-                str = swap(str,h,i);
             }
         }
     }
