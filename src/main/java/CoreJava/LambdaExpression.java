@@ -12,6 +12,7 @@ public class LambdaExpression implements LambdaInterface{
         LambdaInterface lambdaInterface = (text) -> System.out.println("lambda expression");
         lambdaInterface.printContent("text");
 
+
         LambdaInterface lambdaInterface2 = new LambdaExpression();
         LambdaInterface.printText("test");
 
@@ -27,8 +28,5 @@ interface LambdaInterface{
         System.out.println(text);
     }
 
-    abstract class AbstractText implements LambdaInterface{
-
-    }
 }
 
