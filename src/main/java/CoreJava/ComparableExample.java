@@ -29,12 +29,15 @@ public class ComparableExample{
         students[0] = s2;
         students[1] = s1;
 
-        // use comparable interface, sort by natural order of id
-        Arrays.sort(students);
-        System.out.println(Arrays.toString(students));
-
+//        // use comparable interface, sort by natural order of id
+//        Arrays.sort(students);
+//        System.out.println(Arrays.toString(students));
+//
         // use comparator interface, sort by name
         Arrays.sort(students,Student.NameComparator);
+        System.out.println(Arrays.toString(students));
+
+        Arrays.sort(students,Student.ageComparator);
         System.out.println(Arrays.toString(students));
     }
 }
@@ -90,6 +93,10 @@ class Student implements Comparable<Student>{
             return o1.getName().compareTo(o2.getName());
         }
     };
+
+    //age comparator with lambda expression
+    public static Comparator<Student> ageComparator = ((o1, o2) -> o2.getAge() - o1.getAge());
+
 
     @Override
     public String toString(){
