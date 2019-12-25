@@ -1,5 +1,8 @@
 package CoreJava;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class LambdaExpression implements LambdaInterface{
     @Override
     public void printContent(String text){
@@ -16,7 +19,13 @@ public class LambdaExpression implements LambdaInterface{
         LambdaInterface lambdaInterface2 = new LambdaExpression();
         LambdaInterface.printText("test");
 
+        //forEach
+        Map<Integer, String> namesMap = new HashMap<>();
+        namesMap.put(1, "Larry");
+        namesMap.put(2, "Steve");
+        namesMap.put(3, "James");
 
+        namesMap.forEach((key, value) -> System.out.println(key + " " + value));
     }
 }
 
