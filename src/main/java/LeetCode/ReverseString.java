@@ -2,8 +2,7 @@ package LeetCode;
 
 import com.sun.jndi.toolkit.dir.ContextEnumerator;
 
-import java.util.Iterator;
-import java.util.Stack;
+import java.util.*;
 
 public class ReverseString {
 
@@ -42,6 +41,16 @@ public class ReverseString {
         //Calling function recursively
         return reverseString3(string.substring(1)) + string.charAt(0);
     }
+
+    /** method 4 use linkedHashMap*/
+    public static void reverseString4(char[] s){
+        Map<Character,Integer> orderedMap = new LinkedHashMap<>();
+
+        for(char i : s){
+            orderedMap.put(i,0);
+        }
+    }
+
 
 
 
