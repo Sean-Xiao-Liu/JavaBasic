@@ -59,9 +59,9 @@ public class BackPack {
     }
 
     public static void main(String[] args) {
-        String[] games = {"Pac-man","Speed Racer","Pump it Up","Space Invaders","Mario Bros","Mortal Kombat","Atari Breakout","Super Tetris","Star Wars","Street Fighter II"};
-        int[] time = {75,45,30,35,30,15,60,90,20,10};
-        int[] pay = {250,280,150,120,200,100,300,350,110,90};
+        String[] games = {"Pac-man","Speed Racer","Pump it Up","Space Invaders","Mario Bros","Mortal Kombat","Atari Breakout","Super Tetris","Star Wars","Street Fighter II","1more","2more","3more"};
+        int[] time = {75,45,30,35,30,15,60,90,20,10,10,20,30};
+        int[] pay = {250,280,150,120,200,100,300,350,110,90,100,110,120};
 
 //        String[] games = {"Pac-man","Speed Racer","Pump it Up"};
 //        int[] time = {75,30,30};

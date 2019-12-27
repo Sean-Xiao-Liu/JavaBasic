@@ -43,7 +43,7 @@ public class FINRAQ4 {
         // Input the arrays into the
         String[] games = {"Pac-man","Speed Racer","Pump it Up","Space Invaders","Mario Bros","Mortal Kombat","Atari Breakout","Super Tetris","Star Wars","Street Fighter II"};
         int[] time = {75,45,30,35,30,15,60,90,20,10};
-        int[] pay = {250,280,150,120,200,100,300,350,110,90};
+        int[] pay = {950,280,150,120,200,100,300,350,110,90};
         maximizeEarn(games,time,pay);
 
 
