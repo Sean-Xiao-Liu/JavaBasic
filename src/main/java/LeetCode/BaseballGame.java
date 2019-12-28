@@ -97,8 +97,12 @@ public class BaseballGame {
 
         }
 
-        int sum = 0;
-        while (stack.size() > 0) sum+= stack.pop();
+//        int sum = 0;
+//        while (stack.size() > 0) sum+= stack.pop();
+
+
+        int sum = stack.stream().mapToInt(i -> i).sum();
+
         System.out.println("The final score is " + sum);
         return sum;
 
