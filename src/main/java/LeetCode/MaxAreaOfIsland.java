@@ -25,7 +25,7 @@ public class MaxAreaOfIsland {
         if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] == 0)
             return 0;
 
-        grid[i][j] = 0;
+        grid[i][j] = 0; // change the counted number to be zero, so it will not be count again when recurse back
         return (1 + flipAndCount(i, j - 1, grid)+
         flipAndCount(i, j + 1, grid)+
         flipAndCount(i - 1, j, grid)+
