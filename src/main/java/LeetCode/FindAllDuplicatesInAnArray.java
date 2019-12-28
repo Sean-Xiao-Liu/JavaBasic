@@ -1,28 +1,28 @@
 package LeetCode;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class FindAllDuplicatesInAnArray {
 
-    // method 1
-//    public static List<Integer> findDuplicates(int[] nums) {
-//
-//        int result[] = new int[nums.length+1];
-//        List<Integer> ans = new ArrayList<Integer>();
-//
-//        for(int i = 0 ; i < nums.length; i++){
-//            result[nums[i]]++;
-//        }
-//
-//        for(int j = 0 ; j < result.length ; j ++){
-//            if(result[j]>1){
-//                ans.add(j);
-//            }
-//        }return ans;
-//    }
+     //method 1
+    public static List<Integer> findDuplicates2(int[] nums) {
+
+        int result[] = new int[nums.length+1];
+        List<Integer> ans = new ArrayList<Integer>();
+
+        for(int i = 0 ; i < nums.length; i++){
+            result[nums[i]]++;
+        }
+
+        for(int j = 0 ; j < result.length ; j ++){
+            if(result[j]>1){
+                ans.add(j);
+            }
+        }
+        return ans;
+
+
+    }
 
     // method 2
     public static List<Integer> findDuplicates(int[] nums) {
@@ -45,7 +45,7 @@ public class FindAllDuplicatesInAnArray {
 
     public static void main(String[] args) {
         int[] nums = {1,5,2,4,3,2,4,5};
-        List<Integer> ans = findDuplicates(nums);
+        List<Integer> ans = findDuplicates2(nums);
         for(int n:ans){
             System.out.println(n);
         }
