@@ -1,6 +1,7 @@
 package LeetCode;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class FindAllDuplicatesInAnArray {
 
@@ -41,11 +42,29 @@ public class FindAllDuplicatesInAnArray {
         return ans;
     }
 
+    // memthod 3 use hashMap
+    public static List<Integer> findDuplicates3(int[] nums) {
+        Map<Integer,Integer> map = new HashMap<>();
+        for(int i : nums){
+            if(map.containsKey(i)){
+                map.put(i,map.get(i)+1);
+            } else {
+                map.put(i,1);
+            }
+        }
+
+        return map.entrySet()
+                .stream()
+                .filter(x -> x.getValue() == 2)// leave the pair with value == 2
+                .map(x -> x.getKey())// map x to be key only
+                .collect(Collectors.toList()); // collect the key as a list and return
+    }
+
 
 
     public static void main(String[] args) {
         int[] nums = {1,5,2,4,3,2,4,5};
-        List<Integer> ans = findDuplicates2(nums);
+        List<Integer> ans = findDuplicates3(nums);
         for(int n:ans){
             System.out.println(n);
         }
