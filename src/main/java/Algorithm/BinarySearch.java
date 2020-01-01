@@ -7,7 +7,8 @@ public class BinarySearch {
         int high = list.length - 1;
 
         while (low <= high) {
-            int mid = (low + high) / 2;
+//            int mid = (low + high) / 2;
+            int mid = low + (high - low)/2;
             System.out.println("the mid position is " + mid);
             int guess = list[mid];
             if (guess == item) {

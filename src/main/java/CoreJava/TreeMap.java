@@ -2,8 +2,9 @@ package CoreJava;
 
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Map;
 
-public class TreeMap {
+public class TreeMap<i1> {
     public static void main(String[] args) {
         java.util.TreeMap<String,Integer> treeMap = new java.util.TreeMap<>(Collections.reverseOrder());
 
@@ -13,12 +14,18 @@ public class TreeMap {
         treeMap.put("two",2);
         treeMap.put("three",3);
 
-        Comparator comp = treeMap.comparator();
-
-
         System.out.println(treeMap);
 
     }
+
+    class ValueComparator implements Comparator<Integer> {
+
+        @Override
+        public int compare(Integer o1, Integer o2) {
+            return o1 - o2;
+        }
+    }
+
 
 }
 
