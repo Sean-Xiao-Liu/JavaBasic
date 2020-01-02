@@ -17,7 +17,7 @@ public class Combinations {
             list.add(new ArrayList<>(temp));
         } else {
             for(int i = start ; i < candidate.length ; i++){
-                if(temp.contains(candidate[i])) continue;
+//                if(temp.contains(candidate[i])) continue; // since start position moves and there is no duplicate number in the array
                 temp.add(candidate[i]);
                 backtrack(list,temp,candidate,arrayLength,i+1);
                 temp.remove(temp.size()-1);
