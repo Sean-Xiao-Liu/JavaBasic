@@ -1,4 +1,4 @@
-package LeetCode;
+package Interview;
 
 /* The games he should play are :
 Street Fighter II
