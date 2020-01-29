@@ -41,7 +41,7 @@ public class InsertDeleteGetRandomSolution {
 
     /** Get a random element from the set. */
     public int getRandom() {
-        return list.get(rand.nextInt(list.size()));
+        return list.get(rand.nextInt(list.size())); // nextInt(x) generate random int from 0 to x-1
     }
 }
 
