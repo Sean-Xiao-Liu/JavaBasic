@@ -35,11 +35,11 @@ public class LongestSubstringWithoutRepeatingCharacters {
         while (i < n && j < n) {
             // try to extend the range [i, j]
             if (!set.contains(s.charAt(j))){
-                set.add(s.charAt(j++)); // run charAt
+                set.add(s.charAt(j++)); // add charAt(j), then j++, which move the right bound
                 ans = Math.max(ans, j - i);// find the max distance between the fast and slow pointer
             }
             else {
-                set.remove(s.charAt(i++)); //
+                set.remove(s.charAt(i++)); // remove charAt(i), then i++, which move the left bound
             }
         }
         return ans;
