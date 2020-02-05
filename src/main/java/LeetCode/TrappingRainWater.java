@@ -46,13 +46,13 @@ public class TrappingRainWater {
 
     /** method 2  two pointer**/
     public static int trap2(int[] height) {
-        int left = 0, right = height.length-1;
+        int left = 0, right = height.length-1; // left and right are the index pointer on each side
         int ans = 0;
         int left_max = 0, right_max = 0;
         while (left < right) {
 
-            // always update the side with lower max height
-            if (height[left] < height[right]) {
+            // work  on the side with lower absolute height
+            if (height[left] < height[right]) { // when height on left pointer is lower
                 if(height[left] >= left_max){
                     left_max = height[left];
                 } else {
@@ -60,7 +60,7 @@ public class TrappingRainWater {
                 }
                 ++left;
             }
-            else {
+            else { // when height on right pointer is lower
                 if(height[right] >= right_max){
                     right_max = height[right];
                 } else{
@@ -80,6 +80,6 @@ public class TrappingRainWater {
         int[] height = {0,1,0,2,1,0,1,3,2,1,2,1};
         int[] height2 = {3,0,1,2,3,4};
         int[] height3 = {5,4,3,2,5};
-        System.out.println(trap2(height3));
+        System.out.println(trap2(height2));
     }
 }
