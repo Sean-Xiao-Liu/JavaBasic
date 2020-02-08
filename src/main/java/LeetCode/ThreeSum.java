@@ -48,7 +48,7 @@ public class ThreeSum {
         Arrays.sort(nums); // sort the array to prevent duplicates
         List<List<Integer>> list = new ArrayList<>();
         for(int i = 0 ; i < nums.length-2 ; i++){
-            twoSum(-nums[i],i+1,list,nums);
+            twoSum(-nums[i],i+1,list,nums); // target is 0 - nums[i], which is -nums[i]
         }
         return list;
     }
@@ -57,12 +57,13 @@ public class ThreeSum {
         Map<Integer,Integer> map = new HashMap<>();
         for(int left = start ; left < nums.length ; left++){
 //            if(left > start && nums[left] == nums[left-1]) continue;
-            int complement = target - nums[left];
+            int complement = target - nums[left]; // complement is the number we looking for since other 2 numbers are determined in for loops
             if(map.containsKey(nums[left])){
+                // add numbers to a temp list
                 List<Integer> temp = new ArrayList<>();
                 temp.add(-target);
                 temp.add(nums[left]);
-                temp.add(map.get(nums[left]));
+                temp.add(map.get(nums[left])); // here nums[left] is the complement
                 if(!list.contains(temp)){ // remove the duplicate combination
                     list.add(temp);
                 }
@@ -82,14 +83,14 @@ public class ThreeSum {
                 continue;
             }
             int left= i + 1, right = nums.length - 1;
-            int target = -nums[i];
+            int target = -nums[i]; // target is 0 - nums[i], which is -nums[i]
             while (left < right) {
                 if (nums[left] + nums[right] == target) {
                     result.add(Arrays.asList(nums[i], nums[left], nums[right]));
                     left++;
                     right--;
-                    while (left < right && nums[left] == nums[left - 1]) left++;  // skip same result
-                    while (left < right && nums[right] == nums[right + 1]) right--;  // skip same result
+                    while (left < right && nums[left] == nums[left - 1]) left++;  // skip the left end if duplicate
+                    while (left < right && nums[right] == nums[right + 1]) right--;  // skip the right end if duplicate
                 } else if (nums[left] + nums[right] > target) {
                     right--;
                 } else {
