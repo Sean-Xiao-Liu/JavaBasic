@@ -15,13 +15,14 @@ public class GenerateParentheses {
             list.add(temp);
         }
 
-        if (open < length)
-            backtrack(list, temp+"(", open+1, close, length);
-        if (close < open)
+        if (open < length) // when count of ( smaller than 3
+            backtrack(list, temp+"(", open+1, close, length); // add ( to temp and add 1 to the open count
+        if (close < open) // when count of ) smaller than the count ( , add till the count match, used to make sure valid output
             backtrack(list, temp+")", open, close+1, length);
     }
 
     public static void main(String[] args) {
+
         System.out.println(generateParenthesis(3));
     }
 }
