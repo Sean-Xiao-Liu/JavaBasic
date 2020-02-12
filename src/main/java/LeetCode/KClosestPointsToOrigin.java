@@ -56,18 +56,18 @@ public class KClosestPointsToOrigin {
 
     /** method 2 **/
     public int[][] kClosest2(int[][] points, int K) {
-        int[] dists = new int[points.length];
+        int[] distanceArray = new int[points.length]; // distance array record the distance of each point to
         for (int i = 0; i < points.length; ++i)
-            dists[i] = distanceToOrigin(points[i]);
+            distanceArray[i] = distanceToOrigin(points[i]);
 
         // find the distance of first K points
-        Arrays.sort(dists);
-        int distK = dists[K-1];
+        Arrays.sort(distanceArray); // sort the distances in increasing order
+        int distK = distanceArray[K-1]; // distK is the Kth distance to the origin
 
-        int[][] ans = new int[K][2];
+        int[][] ans = new int[K][2]; // initial the size of 2D array
         int t = 0;
         for (int i = 0; i < points.length; ++i)
-            if (distanceToOrigin(points[i]) <= distK)
+            if (distanceToOrigin(points[i]) <= distK) // iterate through the points and only keep the points whose distance to origin is smaller to equals to distK
                 ans[t++] = points[i];
         return ans;
     }
