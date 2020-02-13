@@ -71,7 +71,7 @@ public class RottingOranges {
 
             // Continue to dequeue until all rotten oranges of last round are removed from the queue
             for (int i = 0; i < size; i++) {
-                Position p = q.peek();
+                Position p = q.poll();
 
                 // check the cell in the left/right/top/down of the rotten orange, if it is a fresh orange, enqueue it.
                 if (p.x + 1 < grid.length && grid[p.x + 1][p.y] == 1) {
@@ -90,7 +90,6 @@ public class RottingOranges {
                     grid[p.x][p.y - 1] = 2;
                     q.offer(new Position(p.x, p.y - 1));
                 }
-                q.poll(); // after check the 4 direction of
             }
         }
         return -1; // when there are still some 1 in the grid
