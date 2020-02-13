@@ -26,14 +26,17 @@ public class CoinChange {
         if(list.size() == 0){
             return result;
         } else {
-            int temp = Integer.MAX_VALUE;
-            for(int i = 0 ; i < list.size() ; i++){
-                if(list.get(i).size() < temp){
-                    temp = list.get(i).size();
-                }
-            }
-            result = temp;
+//            int temp = Integer.MAX_VALUE;
+//            for(int i = 0 ; i < list.size() ; i++){
+//                if(list.get(i).size() < temp){
+//                    temp = list.get(i).size();
+//                }
+//            }
+//            result = temp;
+            result = list.stream().map(x -> x.size()).sorted().findFirst().get(); // use stream to get the smallest list size
         }
+
+
 
         return result;
     }
@@ -64,7 +67,7 @@ public class CoinChange {
                 }
             }
         }
-        return dp[amount] > amount ? -1 : dp[amount]; // if true return -1
+        return dp[amount] > amount ? -1 : dp[amount]; //if not able to make it the dp[amount] would equals max, which is larger than amount,then return -1
     }
 
     public static void main(String[] args) {
