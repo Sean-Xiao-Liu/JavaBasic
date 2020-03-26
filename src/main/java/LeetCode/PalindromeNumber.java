@@ -55,9 +55,16 @@ public class PalindromeNumber {
         return x == revertedNumber || x == revertedNumber/10;
     }
 
+    public boolean isPalindrome2(int x){
+        if(x < 0 || (x % 10 == 0 && x !=0 )) return false;
+        String str = new StringBuilder(String.valueOf(x)).reverse().toString(); // convert int to String first
+        int temp = Integer.parseInt(str);
+        return (x == temp);
+    }
+
     public static void main(String[] args) {
-        int x = 10;
+        int x = 73847412;
         PalindromeNumber test = new PalindromeNumber();
-        System.out.println(test.isPalindrome(x));
+        System.out.println(test.isPalindrome2(x));
     }
 }
