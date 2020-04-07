@@ -4,17 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class ComparableExample{
-
-
-
-
     public static void main(String[] args) {
-//        int[] a = {3,5,2,6,10};
-//        Arrays.sort(a);// use Arrays.sort to sort an array
-//        for(int i:a){
-//            System.out.println(i);
-//        }
-
         Student s1 = new Student();
         s1.setId(1);
         s1.setAge(1);
@@ -25,20 +15,34 @@ public class ComparableExample{
         s2.setAge(2);
         s2.setName("abc");
 
-        Student[] students = new Student[2];
-        students[0] = s2;
-        students[1] = s1;
+        Student s3 = new Student();
+        s3.setId(3);
+        s3.setAge(0);
+        s3.setName("jkl");
 
-//        // use comparable interface, sort by natural order of id
-//        Arrays.sort(students);
-//        System.out.println(Arrays.toString(students));
-//
+        Student[] students = new Student[3];
+        students[0] = s3;
+        students[1] = s2;
+        students[2] = s1;
+
+        // print the info of students in their default order
+        System.out.println("The default order is" + Arrays.toString(students));
+
+        // use comparable interface, sort by natural order of id
+        Arrays.sort(students);
+        System.out.println("By comparable interface" + Arrays.toString(students));
+
         // use comparator interface, sort by name
-        Arrays.sort(students,Student.NameComparator);
-        System.out.println(Arrays.toString(students));
+        Arrays.sort(students,Student.nameComparator);
+        System.out.println("By name comparator interface" + Arrays.toString(students));
 
+        // use comparator interface, sort by age
         Arrays.sort(students,Student.ageComparator);
-        System.out.println(Arrays.toString(students));
+        System.out.println("By age comparator interface" + Arrays.toString(students));
+
+        // use comparator interface, sort by id
+        Arrays.sort(students,Student.idComparator);
+        System.out.println("By id comparator interface" + Arrays.toString(students));
     }
 }
 
@@ -79,7 +83,8 @@ class Student implements Comparable<Student>{
     }
 
     //id comparator
-    public static Comparator<Student> IdComparator = new Comparator<Student>() {
+    // smaller id comes first
+    public static Comparator<Student> idComparator = new Comparator<Student>() {
         @Override
         public int compare(Student o1, Student o2) {
             return o1.getId()-o2.getId();
@@ -87,20 +92,22 @@ class Student implements Comparable<Student>{
     };
 
     //name comparator
-    public static Comparator<Student> NameComparator = new Comparator<Student>() {
+    public static Comparator<Student> nameComparator = new Comparator<Student>() {
         @Override
         public int compare(Student o1, Student o2) {
             return o1.getName().compareTo(o2.getName());
         }
     };
 
-    //age comparator with lambda expression
+    // age comparator with lambda expression
+    // comparator is functional interface, can apply lambda expression
+    // o2 - o1 means larger object comes first
     public static Comparator<Student> ageComparator = ((o1, o2) -> o2.getAge() - o1.getAge());
 
 
     @Override
     public String toString(){
-    return "The student name is "+ this.name + " whose age is "+this.age;
+    return "The student name is "+ this.getName() + " whose age is "+this.getAge() + " with id " + this.getId();
     }
 
 }
