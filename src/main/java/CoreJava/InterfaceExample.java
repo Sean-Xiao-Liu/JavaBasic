@@ -10,6 +10,7 @@ public class InterfaceExample implements PrintString,AnotherPrintString{
         InterfaceExample interfaceExample = new InterfaceExample();
         interfaceExample.printAbstract();
         interfaceExample.printDefault();
+        interfaceExample.anotherPrintAbstract();
         PrintString.printStatic();
     }
 
