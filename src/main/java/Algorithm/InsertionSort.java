@@ -50,7 +50,7 @@ public class InsertionSort {
 
 
     public static void main(String[] args) {
-        int[] test = {5,2,3,4,1};
+        int[] test = {5,2,3,4,1,2,0};
         int[] result = insertionSort(test);
         for (int i:
              result) {
