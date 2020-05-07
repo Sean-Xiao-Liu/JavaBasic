@@ -68,6 +68,20 @@ public class SymmetricTree {
                 && isMirror(t1.left, t2.right);
     }
 
+    /** method 3 general tree frame**/
+    // https://github.com/Sean-Xiao-Liu/fucking-algorithm/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E6%93%8D%E4%BD%9C%E9%9B%86%E9%94%A6.md
+    public boolean isSymmetric3(TreeNode root) {
+        return isMirror3(root,root);
+    }
+
+    private static boolean isMirror3(TreeNode t1,TreeNode t2){
+        if(t1 == null && t2 == null) return true;
+        if(t1 == null || t2 == null) return false;
+        // return (t1.val == t2.val) && isMirror(t1.left,t2.right) && isMirror(t1.right,t2.left);
+        if(t1.val != t2.val) return false;
+        return isMirror(t1.left,t2.right) && isMirror(t1.right,t2.left);
+    }
+
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
 //        root.left = new TreeNode(2);
