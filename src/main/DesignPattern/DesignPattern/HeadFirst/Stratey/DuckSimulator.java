@@ -1,4 +1,4 @@
-package HeadFirst.Strategy;
+package DesignPattern.HeadFirst.Stratey;
 
 public class DuckSimulator {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package HeadFirst.Strategy;
+package DesignPattern.HeadFirst.Stratey;
 
 /**program to interface, not to implementation**/
 public abstract class DuckVersionThree {
