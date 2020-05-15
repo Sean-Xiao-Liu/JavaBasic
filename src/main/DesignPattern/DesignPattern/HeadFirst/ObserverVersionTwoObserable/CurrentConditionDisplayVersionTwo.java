@@ -12,7 +12,7 @@ public class CurrentConditionDisplayVersionTwo implements Observer, DisplayEleme
     private float humidity;
     private float pressure;
 
-    public CurrentConditionDisplayVersionTwo(Observable observable) {
+    public CurrentConditionDisplayVersionTwo(Observable observable) { // Observer needs a observable object as argument
         this.observable = observable;
         observable.addObserver(this);
     }
