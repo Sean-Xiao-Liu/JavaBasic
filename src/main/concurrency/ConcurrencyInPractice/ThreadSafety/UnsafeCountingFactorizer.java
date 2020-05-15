@@ -14,7 +14,7 @@ public class UnsafeCountingFactorizer implements Servlet {
     public long getCount() {
         return count;
     }
-
+    /************************************************************************************************************************************************************************************/
     /**
      * ++count is not a atomic operation but a read-modify-write operation, which may case updates lost
      * when two un-synchronized threads try to invoke the service concurrently.
@@ -33,8 +33,18 @@ public class UnsafeCountingFactorizer implements Servlet {
         encodeIntoResponse(resp, factors);
     }
 
+    void encodeIntoResponse(ServletResponse res, BigInteger[] factors) {
+    }
 
+    BigInteger extractFromRequest(ServletRequest req) {
+        return new BigInteger("7");
+    }
 
+    BigInteger[] factor(BigInteger i) {
+        // Doesn't really factor
+        return new BigInteger[] { i };
+    }
+    /************************************************************************************************************************************************************************************/
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
 
@@ -55,15 +65,5 @@ public class UnsafeCountingFactorizer implements Servlet {
 
     }
 
-    void encodeIntoResponse(ServletResponse res, BigInteger[] factors) {
-    }
 
-    BigInteger extractFromRequest(ServletRequest req) {
-        return new BigInteger("7");
-    }
-
-    BigInteger[] factor(BigInteger i) {
-        // Doesn't really factor
-        return new BigInteger[] { i };
-    }
 }
