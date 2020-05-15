@@ -5,7 +5,7 @@ import java.util.Observer;
 import java.util.Vector;
 
 public class WeatherDataVersionTwo extends Observable { // extends the build in java observable class, which is not abstract
-    private Vector<Observer> obs;
+
     private float temperature;
     private float humidity;
     private float pressure;
