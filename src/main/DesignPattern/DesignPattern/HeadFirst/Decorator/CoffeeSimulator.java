@@ -10,5 +10,12 @@ public class CoffeeSimulator {
         espresso = new Mocha(espresso);
         espresso = new Soy(espresso);
         System.out.println(espresso.getDescription() + " $ "+ espresso.cost());
+
+        Beverage houseBlend = new HouseBlend();
+        houseBlend.setSize(2);
+        houseBlend = new Soy(houseBlend);
+        houseBlend = new Soy(houseBlend);
+        System.out.println(houseBlend.getDescription() + " $ "+ houseBlend.cost());
+
     }
 }
