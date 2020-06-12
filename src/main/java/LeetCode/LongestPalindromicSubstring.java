@@ -17,7 +17,9 @@ public class LongestPalindromicSubstring {
         String result = "";
         for(int i = 0 ; i < s.length();i++){
             for(int j = i+1 ; j <= s.length();j++){
-                String temp = s.substring(i,j);
+                String temp = s.substring(i,j);/* substring begins at the specified {@code beginIndex} and
+                                                * extends to the character at index {@code endIndex - 1}.
+                                                * Thus the length of the substring is {@code endIndex-beginIndex}.*/
                 if(isPalindrome(temp) && temp.length() > result.length()){
                     result = temp;
                 }

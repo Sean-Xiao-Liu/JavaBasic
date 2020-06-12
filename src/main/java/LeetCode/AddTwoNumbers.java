@@ -17,8 +17,8 @@ import java.util.ArrayList;
  **/
 public class AddTwoNumbers {
     public static SinglyLinkedListNode addTwoNumbers(SinglyLinkedListNode l1, SinglyLinkedListNode l2) {
-        SinglyLinkedListNode result = new SinglyLinkedListNode(0);
-        SinglyLinkedListNode current = result;
+        SinglyLinkedListNode result = new SinglyLinkedListNode(0); // create a new linked list to store result
+        SinglyLinkedListNode current = result; // treat current as a pointer, it always point to the working node
         int carryValue  = 0; // carry the value from the previous index to the next one
         while(l1 != null || l2 != null){ //means it will keep going until both l1 and l2 become null
             int x = (l1 != null) ? l1.val : 0; // if l1 != null, then x = l1.val or it equals to 0

@@ -22,6 +22,7 @@ public class NoVisibility {
         number = 1;
         ready = true;
         new ReadThread().start(); // nothing printed
+        System.out.println(1 == 2);
     }
 }
 

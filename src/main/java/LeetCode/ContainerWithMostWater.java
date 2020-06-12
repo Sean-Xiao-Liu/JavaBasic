@@ -22,10 +22,10 @@ public class ContainerWithMostWater {
     // 2 pointer
     public int maxWater(int[] height, int left, int right){
         int maxArea = 0;
-        int area = 0;
+        int area;
         while(right > left){
             if(height[left] >= height[right]){
-                area = height[right]*(right - left);
+                area = height[right]*(right - left); // max level of water is determined by lower bound, and vice versa
                 right--;
             } else { // can't write two if here since they would be parallel.
                 area = height[left]*(right - left);

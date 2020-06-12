@@ -49,18 +49,19 @@ public class LongestSubstringWithoutRepeatingCharacters {
     }
 
     /*** method 2 sliding window***/
+    // the time complexity would be O(n) since only traverse once
     public static int lengthOfLongestSubstring2(String s) {
         int n = s.length();
         Set<Character> set = new HashSet<>();
         int ans = 0, i = 0, j = 0;
-        while (i < n && j < n) {
+        while (i < n && j < n) { // i is the left bound, j is the right bound, if the char is not duplicated, move the right bound, else, move left bound
             // try to extend the range [i, j]
-            if (!set.contains(s.charAt(j))){
+            if (!set.contains(s.charAt(j))){ // if set doesn't contains char at right bound
                 set.add(s.charAt(j++)); // add charAt(j), then j++, which move the right bound
                 ans = Math.max(ans, j - i);// find the max distance between the fast and slow pointer
             }
             else {
-                set.remove(s.charAt(i++)); // remove charAt(i), then i++, which move the left bound
+                set.remove(s.charAt(i++)); // remove charAt(i), then i++, which move the left bound, this will keep deleting until the chat at j is removed from set
             }
         }
         return ans;
@@ -71,7 +72,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
 
 
     public static void main(String[] args) {
-        String s = "lakjsdflkasjdf";
+        String s = "lakjsdfalkasjdf";
 //        System.out.println(lengthOfLongestSubstring(s));
         System.out.println(lengthOfLongestSubstring2(s));
     }

@@ -58,7 +58,7 @@ public class PalindromeNumber {
     public boolean isPalindrome2(int x){
         if(x < 0 || (x % 10 == 0 && x !=0 )) return false;
         String str = new StringBuilder(String.valueOf(x)).reverse().toString(); // convert int to String first
-        int temp = Integer.parseInt(str);
+        int temp = Integer.parseInt(str); // convert string into int with parseInt()
         return (x == temp);
     }
 
