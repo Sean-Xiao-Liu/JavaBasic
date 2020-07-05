@@ -22,7 +22,7 @@ import java.util.LinkedList;
  **/
 public class InsertInterval {
     public int[][] insert(int[][] intervals, int[] newInterval) {
-        int[][] newIntervals = addIntervals(intervals,newInterval);
+        int[][] newIntervals = addIntervals2(intervals,newInterval);
         Collections.sort(Arrays.asList(newIntervals),intervalComparator);
 
         LinkedList<int[]> merged = new LinkedList<>(); // use linkedlist here since it implements the deque interface and can invoke getLast method without traversal
@@ -51,6 +51,13 @@ public class InsertInterval {
         added[intervals.length] = newInterval;
         return added;
     }
+
+    public static int[][] addIntervals2(int[][] intervals, int[] newInterval){
+       int[][] added = Arrays.copyOf(intervals,intervals.length+1);
+       added[intervals.length] = newInterval;
+       return added;
+    }
+
 
     public static Comparator<int[]> intervalComparator = (a,b) -> a[0] < b[0] ? -1 : a[0] == b[0] ? 0 : 1;
 
