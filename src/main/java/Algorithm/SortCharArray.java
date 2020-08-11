@@ -1,11 +1,6 @@
 package Algorithm;
 
-import com.sun.deploy.util.ArrayUtil;
-import com.sun.tools.javac.util.ArrayUtils;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
 
 public class SortCharArray {
     public static char[] sortChatArray(char[] chars){
