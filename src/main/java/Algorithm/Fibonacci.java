@@ -48,8 +48,8 @@ public class Fibonacci {
 
     public static void main(String[] args) {
 //        System.out.println(fib(51));
-//        int[] memo = new int[51];
-//        System.out.println(fib2(50,memo));
-        System.out.println(fib3(5));
+        int[] memo = new int[10];
+        System.out.println(fib2(9,memo));
+        System.out.println(fib3(9));
     }
 }
