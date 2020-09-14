@@ -8,7 +8,7 @@ import java.util.List;
 public class SubsetsII {
     public static List<List<Integer>> subsetsWithDup(int[] nums) {
         List<List<Integer>> lists = new ArrayList<>();
-        Arrays.sort(nums); //sort the nums so the duplicates can be skipped
+//        Arrays.sort(nums); //sort the nums so the duplicates can be skipped
         backtrack(lists,new ArrayList<>(),nums,0);
         return lists;
 
@@ -25,7 +25,7 @@ public class SubsetsII {
     }
 
     public static void main(String[] args) {
-        int[] nums = {1,2,2,3};
+        int[] nums = {3,4,2,5,1};
         System.out.println(subsetsWithDup(nums));
     }
 }
