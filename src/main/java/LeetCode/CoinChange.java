@@ -56,13 +56,13 @@ public class CoinChange {
 
     /** method 2 dynamic programming **/
     public static int coinChange2(int[] coins, int amount) {
-        int max = amount + 1;
+        int max = amount + 1;  // 使array index 于钱金额对应
         int[] dp = new int[amount + 1];
-        Arrays.fill(dp, max); //
-        dp[0] = 0;
+        Arrays.fill(dp, max); // dp[i] 对应的是凑成该金额所用最小硬币数
+        dp[0] = 0; // fill the first index of array with 0 and this index will  not be updated/used
         for (int i = 1; i <= amount; i++) {
             for (int j = 0; j < coins.length; j++) {
-                if (coins[j] <= i) { // can't form by the coin that larger that it
+                if (coins[j] <= i) { // i 在这里是钱的金额，而不是index
                     dp[i] = Math.min(dp[i], dp[i - coins[j]] + 1);// dp[i] 和 dp[i - coins[j]] 相差一枚价值为coins[j] 的硬币
                 }
             }
