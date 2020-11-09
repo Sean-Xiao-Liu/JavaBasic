@@ -38,7 +38,20 @@ public class BinaryTreeInorderTraversal {
         }
     }
 
+    public static List < Integer > inorderTraversal3(TreeNode root) {
 
+        //避免输入的Node为空
+        if (root != null) {
+            if (root.left != null) {
+                inorderTraversal(root.left);
+            }
+            answer.add(root.val);
+            if (root.right != null) {
+                inorderTraversal(root.right);
+            }
+        }
+        return answer;
+    }
 
 
 
