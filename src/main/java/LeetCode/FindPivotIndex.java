@@ -62,6 +62,21 @@ public class FindPivotIndex {
         return -1;
     }
 
+    /** method 3 2 traversal without extra array**/
+    public static int pivotIndexThree(int[] nums) {
+        int leftSum=0,sum=0;
+        for(int num : nums){
+            sum += num;
+        }
+
+        for(int i = 0 ; i < nums.length ; i++){
+            // sum - nums[i] - leftSum is rightSum
+            if(leftSum == sum - nums[i] - leftSum) return i; // 某个数字右边之和等于总和减去该数字并减去左边之和
+            leftSum += nums[i];
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
         int[] testArrayOne = {1,7,3,6,5,6};
         int[] testArrayTwo = {1,2,0};
