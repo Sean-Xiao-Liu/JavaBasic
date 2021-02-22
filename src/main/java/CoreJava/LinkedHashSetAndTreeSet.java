@@ -13,6 +13,11 @@ public class LinkedHashSetAndTreeSet {
         treeSet.add(2);
         treeSet.add(1);
 //        treeSet.add(null); // Tree Set don't allow null objects
+        TreeSet<Integer> anotherTreeSet = new TreeSet<>((n1,n2) -> n2 - n1); // pass a comparator into the the
+        // tree set and sort the set with descending order
+        anotherTreeSet.add(4);
+        anotherTreeSet.add(5);
+        anotherTreeSet.add(6);
 
         Iterator iterator = treeSet.iterator();
         while(iterator.hasNext()){
@@ -43,6 +48,16 @@ public class LinkedHashSetAndTreeSet {
             System.out.println("HashSet : " + iterator3.next());
         }
 
+        Iterator iterator4 = treeSet.descendingIterator(); // tree set has built in descending Iterator
+        while (iterator4.hasNext()){
+            System.out.println("Tree Set descending Iterator : " + iterator4.next());
+        }
+
+
+        Iterator iterator5 = anotherTreeSet.iterator();
+        while (iterator5.hasNext()){
+            System.out.println("Tree Set descending comparator : " + iterator5.next());
+        }
 
     }
 
