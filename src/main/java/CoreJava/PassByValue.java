@@ -1,5 +1,7 @@
 package CoreJava;
 
+import java.util.List;
+
 public class PassByValue {
 
     static void add(int x){
@@ -10,6 +12,13 @@ public class PassByValue {
         int x= 10;
         add(x);
         System.out.println(x);
+
+        String s1 = "This is a String";
+        String s2 = s1;
+        s1 = "Change the original String";
+        System.out.println(s2);
+
+
     }
 }
 
