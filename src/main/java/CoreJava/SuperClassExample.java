@@ -1,6 +1,6 @@
 package CoreJava;
 
-public class ParentAndChildren {
+public class SuperClassExample {
 
 
     public static void main(String[] args) {
