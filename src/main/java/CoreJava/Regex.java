@@ -26,6 +26,5 @@ public class Regex {
         for(String s:strings){
             System.out.println(s);
         }
-        
     }
 }
