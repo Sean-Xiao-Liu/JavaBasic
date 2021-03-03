@@ -4,6 +4,10 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class ComparableExample{
+
+    // the comparator doesn't need to be with the class
+    public static Comparator<Student> ageComparator = ((o1, o2) -> o2.getAge() - o1.getAge());
+
     public static void main(String[] args) {
         Student s1 = new Student();
         s1.setId(1);
@@ -37,12 +41,15 @@ public class ComparableExample{
         System.out.println("By name comparator interface" + Arrays.toString(students));
 
         // use comparator interface, sort by age
-        Arrays.sort(students,Student.ageComparator);
+        Arrays.sort(students,ageComparator);
         System.out.println("By age comparator interface" + Arrays.toString(students));
 
         // use comparator interface, sort by id
         Arrays.sort(students,Student.idComparator);
         System.out.println("By id comparator interface" + Arrays.toString(students));
+
+        //lambda expression
+        Arrays.sort(students,(o1,o2)->o2.getId()-o1.getId());
     }
 }
 

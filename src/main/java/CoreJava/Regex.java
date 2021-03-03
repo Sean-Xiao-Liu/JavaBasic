@@ -12,6 +12,11 @@ public class Regex {
 
     }
 
+    /**
+     *
+     * @param string
+     * @return
+     */
     public static String[] splitBySpaces(String string){
         String pattern = " +";
         String[] strings = string.split(pattern);
