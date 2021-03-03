@@ -19,6 +19,21 @@ public class ReverseString {
         }
     }
 
+    // overloading
+    public static String reverseString(String str){
+        char[] chars = str.toCharArray(); //convert to char array
+        int head = 0;
+        int tail = chars.length-1;
+        while(head < tail){
+            char temp = chars[tail];
+            chars[tail] = chars[head];
+            chars[head] = temp;
+            head++;
+            tail--;
+        }
+       return String.valueOf(chars);
+    }
+
     /***method 2 use stack***/
     public static void reverseString2(char[] s) {
         Stack<Character> stack = new Stack<>();
