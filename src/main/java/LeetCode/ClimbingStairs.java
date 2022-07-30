@@ -1,7 +1,12 @@
 package LeetCode;
 
-
 import org.junit.Assert;
+
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
 
 /* each stair n can be reached from the the n-1 stair and n-2 stair,
 * assume there are S_(n-1) different ways to reach the n-1 stair, there is only one way to reach the n stair from the n-1 stair
@@ -11,7 +16,10 @@ import org.junit.Assert;
 *
 *
 * */
-public class ClimbingStairs {
+    public class ClimbingStairs {
+
+
+
     public static int climbStairs(int n) {
         if (n == 1) {
             return 1;
@@ -47,10 +55,16 @@ public class ClimbingStairs {
     }
 
     public static void main(String[] args) {
-
+        Logger logger = LoggerFactory.getLogger(ClimbingStairs.class);
+        logger.info("Running assertions");
         Assert.assertEquals("3 stairs 3 way",3,climbStairs3(3));
+        Assert.assertEquals(2,climbStairs3(2));
+        Assert.assertEquals(5,climbStairs3(4));
+        Assert.assertEquals(10946,climbStairs3(20));
+        logger.info("Tests passed");
 
-//        System.out.println("There are " +climbStairs3(stairs) + " ways to climb " + stairs + " stairs");
+
+
 
     }
 }
