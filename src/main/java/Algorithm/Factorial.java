@@ -10,7 +10,16 @@ public class Factorial { // using recursive
         }
     }
 
+    private static int fact2(int a){
+        int b = a - 1;
+        while (b >= 1){
+            a = a * b;
+            b = b - 1;
+        }
+        return a;
+    }
+
     public static void main(String[] args) {
-        System.out.println(fact(5));
+        System.out.println(fact2(5));
     }
 }

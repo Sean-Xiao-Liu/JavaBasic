@@ -7,7 +7,6 @@ import java.util.List;
 public class BinaryTreeInorderTraversal {
     public static List<Integer> inorderTraversal(TreeNode root) {
         if(root == null) return answer;
-
         if(root.left != null) inorderTraversal(root.left);
         if(root != null){
             answer.add(root.val);

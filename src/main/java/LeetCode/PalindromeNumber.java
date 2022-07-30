@@ -19,18 +19,6 @@ package LeetCode;
 
 public class PalindromeNumber {
     public boolean isPalindrome(int x) {
-//    //method 1 trans int to string, traversal and compare the head and tail of the string
-//    boolean ans = true;
-//    String temp = String.valueOf(x);
-//    for(int  i = 0 ; i < temp.length() ; i++){
-//        if (temp.charAt(i) != temp.charAt(temp.length()-1-i)){
-//            ans = false;
-//            break;
-//        }
-//    }
-//    return ans;
-
-
 
         // method 2 reverse the int and compare the new int with the old one
         // Special cases:
