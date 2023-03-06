@@ -1,7 +1,5 @@
 package LeetCode;
 
-import Algorithm.SelectionSortArray;
-
 import java.util.Arrays;
 
 public class MergeSortedArray {
