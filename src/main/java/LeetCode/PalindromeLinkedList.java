@@ -1,7 +1,7 @@
 package LeetCode;
 
 import DataStructure.SinglyLinkedListNode;
-import sun.jvm.hotspot.utilities.soql.ScriptObject;
+
 
 import java.util.ArrayList;
 import java.util.Collections;

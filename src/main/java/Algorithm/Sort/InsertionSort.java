@@ -1,4 +1,4 @@
-package Algorithm;
+package Algorithm.Sort;
 
 public class InsertionSort {
     public static int[] insertionSort(int[] arr) {
