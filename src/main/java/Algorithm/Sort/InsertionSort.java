@@ -21,10 +21,6 @@ public class InsertionSort {
 
 
 
-
-
-
-
     public static void insertionSort2(int[] arr){
         int n = arr.length;
         for(int i = 1; i < n ; i++){
@@ -40,18 +36,32 @@ public class InsertionSort {
         }
     }
 
+    public static int[] insertionSortThree(int[] array){
+        int length = array.length;
+        for(int i = 0; i < length-1; i++){
 
+            int smallestValue  = array[i];
+            int smallestIndex = i;
 
+            for(int j = i+1 ; j< length; j++){
+                if (array[j] <= smallestValue) {
+                    smallestValue = array[j]; // mark the new smallest number
+                    smallestIndex = j; // get the index of smallest number
+                }
+            }
 
-
-
-
+            // swap the array[i] with array[smallestIndex]
+            array[smallestIndex] = array[i];
+            array[i]  =smallestValue;
+        }
+        return array;
+    }
 
 
 
     public static void main(String[] args) {
-        int[] test = {5,2,3,4,1,2,0};
-        int[] result = insertionSort(test);
+        int[] test = {5,2,3,4,1,2,0,-1,78,-16,124};
+        int[] result = insertionSortThree(test);
         for (int i:
              result) {
             System.out.println(i);
