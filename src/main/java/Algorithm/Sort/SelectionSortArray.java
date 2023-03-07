@@ -1,5 +1,7 @@
 package Algorithm.Sort;
 
+import Utils.PrintUtil;
+
 import java.util.Arrays;
 
 public class SelectionSortArray {
@@ -48,11 +50,32 @@ public class SelectionSortArray {
         return newArr;
     }
 
+    public static int[] selectionSortThree(int[] array){
+        int length = array.length;
+        for(int i = 0; i < length-1; i++){
+
+            int smallestValue  = array[i];
+            int smallestIndex = i;
+
+            for(int j = i+1 ; j< length; j++){
+                if (array[j] <= smallestValue) {
+                    smallestValue = array[j]; // mark the new smallest number
+                    smallestIndex = j; // get the index of smallest number
+                }
+            }
+
+            // swap the array[i] with array[smallestIndex]
+            array[smallestIndex] = array[i];
+            array[i]  =smallestValue;
+        }
+        return array;
+    }
+
 
 
     public static void main(String[] args) {
         int[] arr = {5, 3, 6, 2, 10, 3, 8,9};
-        System.out.println(Arrays.toString(selectionSort(arr)));
+        PrintUtil.print(selectionSortThree(arr));
 
     }
 }

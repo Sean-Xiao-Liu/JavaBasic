@@ -1,6 +1,10 @@
 package Algorithm.Sort;
 
+
+import Utils.PrintUtil;
+
 public class BubbleSort {
+
     public static void bubbleSort(int[] arr)
     {
         int n = arr.length;
@@ -15,6 +19,11 @@ public class BubbleSort {
                 }
     }
 
+    /**
+     * recursive bubble sort
+     * @param arr
+     * @param n
+     */
     public static void bubbleSort2(int[] arr,int n)
     {
         //base case
@@ -47,25 +56,68 @@ public class BubbleSort {
                 }
             }
 
-            System.out.println("This is the array after loop # "+ counter);
-            printArray(array);
+            PrintUtil.print("This is the array after loop # "+ counter);
+            PrintUtil.print(array);
             counter++;
         }
-        System.out.println("This is the final result");
-        printArray(array);
+        PrintUtil.print("This is the final result");
+        PrintUtil.print(array);
     }
 
-    private static void printArray(int[] arr){
-        for(int i : arr){
-            System.out.print(i + " ");
+    public static int[] bubbleSort4(int[] array){
+        if(array.length == 1 || array == null) return array;
+
+        int length = array.length;
+        boolean isSorted  = false;
+        while (!isSorted){
+            isSorted = true;
+            for(int j = 0; j < length-1; j++){
+                // if the array is not sorted
+                if(array[j] > array[j+1]){ // can't use =, will result in dead loop
+                    isSorted = false; // mark sorted is false
+
+                    // swap array[j] and array[j+1]
+                    int temp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = temp;
+                }
+
+            }
+
         }
-        System.out.println();
+        return array;
+    }
+
+    public static <T extends Comparable> T[] bubbleSortEverything(T[] array){ // need to make T extends Comparable to use compareTo method to
+        if(array.length == 1 || array == null) return array;
+
+        int length = array.length;
+        boolean isSorted  = false;
+        while (!isSorted){
+            isSorted = true;
+            for(int j = 0; j < length-1; j++){
+                // if the array is not sorted
+                if(array[j].compareTo(array[j+1]) > 0){ // can't use =, will result in dead loop
+                    isSorted = false; // mark sorted is false
+
+                    // swap array[j] and array[j+1]
+                    T temp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = temp;
+                }
+
+            }
+
+        }
+        return array;
     }
 
 
     public static void main(String[] args) {
-        int[] test = {3,4,2,1,5,4,3,9,1,10,14,17,18,20,5,7};
-        bubbleSort3(test);
+        Integer[] integers = new Integer[] { 3,4,2,1,5,4,3,9,1,10,14,17,18,20,5,7,-1,-7 };
+        Character[] characters = new Character[] {'d','f','t','A','z'};
+//        PrintUtil.print(bubbleSortEverything(integers));
+        PrintUtil.print(bubbleSortEverything(characters));
     }
 
 
