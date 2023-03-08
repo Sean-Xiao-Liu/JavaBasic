@@ -1,5 +1,8 @@
 package Utils;
 
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -20,10 +23,17 @@ public class PrintUtil {
 
     public static <T> void print(List<T> list){
         Iterator iterator = list.iterator();
-        if(iterator.hasNext()){
+        while(iterator.hasNext()){
             System.out.println(iterator.next());
+
         }
 
+    }
+
+    public static void printTime(){
+        System.out.println(
+                new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss.SSS").format(new java.util.Date())
+        );
     }
 
     public static void print(String logs, Object... args){

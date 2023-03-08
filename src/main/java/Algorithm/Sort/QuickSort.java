@@ -1,5 +1,8 @@
 package Algorithm.Sort;
 
+import Utils.PrintUtil;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
@@ -29,10 +32,44 @@ public class QuickSort {
         }
     }
 
+    private static void quickSortWithRecursiveOperation(List<Integer> integers){
+        if (integers.size() > 1){
+            List<Integer> smaller = new ArrayList<>();
+            List<Integer> equal = new ArrayList<>();
+            List<Integer> greater = new ArrayList<>();
+
+            Integer medium = integers.get( integers.size( ) / 2 ); // get the number in the medium of list
+            for(Integer i : integers){
+                if (i < medium){
+                    smaller.add(i);
+                } else if (i > medium){
+                    greater.add(i);
+                } else {
+                    equal.add(i);
+                }
+            }
+
+            quickSortWithRecursiveOperation(smaller);
+            quickSortWithRecursiveOperation(equal);
+            quickSortWithRecursiveOperation(greater);
+
+            integers.clear();
+            integers.addAll(smaller);
+            integers.addAll(equal);
+            integers.addAll(greater);
+        }
+    }
+
+
+
 
 
 
     public static void main(String[] args) {
-        System.out.println(quicksort(Arrays.asList(10, 5, 2, 3))); // [2, 3, 5, 10]
+        List<Integer> list = new ArrayList<>(List.of(3,4,2,1,18,20,5,7,-1,-7));
+        PrintUtil.printTime();
+        quickSortWithRecursiveOperation(list);
+        PrintUtil.printTime();
+        PrintUtil.print(list);
     }
 }

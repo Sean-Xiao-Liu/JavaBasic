@@ -114,9 +114,11 @@ public class BubbleSort {
 
 
     public static void main(String[] args) {
-        Integer[] integers = new Integer[] { 3,4,2,1,5,4,3,9,1,10,14,17,18,20,5,7,-1,-7 };
+        Integer[] integers = new Integer[] { 3,4,2,1,18,20,5,7,-1,-7 };
         Character[] characters = new Character[] {'d','f','t','A','z'};
-//        PrintUtil.print(bubbleSortEverything(integers));
+        PrintUtil.printTime();
+        PrintUtil.print(bubbleSortEverything(integers));
+        PrintUtil.printTime();
         PrintUtil.print(bubbleSortEverything(characters));
     }
 
