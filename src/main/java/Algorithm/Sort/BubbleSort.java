@@ -3,6 +3,10 @@ package Algorithm.Sort;
 
 import Utils.PrintUtil;
 
+import java.lang.reflect.Array;
+
+// import Utils.PrintUtil;
+
 public class BubbleSort {
 
     public static void bubbleSort(int[] arr)
@@ -40,51 +44,26 @@ public class BubbleSort {
 
         bubbleSort2(arr,n-1);
     }
-
-    public static void bubbleSort3(int[] array){
-        boolean sorted = false;
-        int counter = 1;
-
-        while (!sorted){
-            sorted = true; // always assume sorted is true before the loop
-            for (int i = 0; i < array.length - 1;i++){
-                if(array[i] > array[i+1]){
-                    sorted = false; // update sorted if the swap happened
-                    int temp = array[i];
-                    array[i] = array[i+1];
-                    array[i+1] =temp;
-                }
-            }
-
-            PrintUtil.print("This is the array after loop # "+ counter);
-            PrintUtil.print(array);
-            counter++;
-        }
-        PrintUtil.print("This is the final result");
-        PrintUtil.print(array);
-    }
-
-    public static int[] bubbleSort4(int[] array){
-        if(array.length == 1 || array == null) return array;
-
-        int length = array.length;
-        boolean isSorted  = false;
-        while (!isSorted){
+    
+    public static Integer[] bubbleSort5(Integer[] array){
+        // set a variable to track if array is sorted
+        boolean isSorted = false; 
+      
+        // run while loop until array is sorted
+        while(!isSorted){
             isSorted = true;
-            for(int j = 0; j < length-1; j++){
-                // if the array is not sorted
-                if(array[j] > array[j+1]){ // can't use =, will result in dead loop
-                    isSorted = false; // mark sorted is false
-
-                    // swap array[j] and array[j+1]
-                    int temp = array[j];
-                    array[j] = array[j+1];
-                    array[j+1] = temp;
+            for(int i = 0; i < array.length-1 ; i++ ){
+                // if array is not sorted, mark isSorted as false and swap the numbers
+                if(array[i] > array[i+1]){
+                    isSorted = false;
+                    Integer temp = array[i];
+                    array[i] = array[i+1];
+                    array[i+1] = temp;
                 }
-
             }
-
         }
+
+
         return array;
     }
 
@@ -115,11 +94,13 @@ public class BubbleSort {
 
     public static void main(String[] args) {
         Integer[] integers = new Integer[] { 3,4,2,1,18,20,5,7,-1,-7 };
-        Character[] characters = new Character[] {'d','f','t','A','z'};
-        PrintUtil.printTime();
-        PrintUtil.print(bubbleSortEverything(integers));
-        PrintUtil.printTime();
-        PrintUtil.print(bubbleSortEverything(characters));
+        // Character[] characters = new Character[] {'d','f','t','A','z'};
+        // PrintUtil.printTime();
+        // PrintUtil.print(bubbleSortEverything(integers));
+        // PrintUtil.printTime();
+        // PrintUtil.print(bubbleSortEverything(characters));
+//        System.out.println(bubbleSort5(integers));
+        PrintUtil.print(bubbleSort5(integers));
     }
 
 
