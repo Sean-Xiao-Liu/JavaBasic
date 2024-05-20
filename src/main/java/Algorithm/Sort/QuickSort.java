@@ -60,16 +60,52 @@ public class QuickSort {
         }
     }
 
+    public static int[] quickSort(int[] array) {
+        quickSort(array, 0, array.length - 1);
+        return array;
+    }
 
+    private static void quickSort(int[] array, int low, int high) {
+        if (low < high) {
+            int pivotIndex = partition(array, low, high);
+            quickSort(array, low, pivotIndex - 1); // Recursively sort the left subarray
+            quickSort(array, pivotIndex + 1, high); // Recursively sort the right subarray
+        }
+    }
 
+    private static int partition(int[] array, int low, int high) {
+        int pivot = array[high]; // pivot is a value not index
+        int i = (low - 1); // Index of smaller element, for the first run i = -1
+
+        for (int j = low; j < high; j++) { // iterate array
+            // If current element is smaller than or equal to pivot
+            if (array[j] <= pivot) {
+                i++;
+                swap(array, i, j); // Swap array[i] and array[j]
+            }
+        }
+        // by now from index low to i, the values all small or equal to pivot
+        // Swap array[i+1] and array[high] (or pivot)
+        swap(array, i + 1, high);
+        PrintUtil.print("From index " + low + " to index " + high ,array);
+        return i + 1;
+    }
+
+    private static void swap(int[] array, int i, int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
 
 
 
     public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>(List.of(3,4,2,1,18,20,5,7,-1,-7));
-        PrintUtil.printTime();
-        quickSortWithRecursiveOperation(list);
-        PrintUtil.printTime();
-        PrintUtil.print(list);
+        List<Integer> list = new ArrayList<>(List.of(3,10,20,5,7,-1,-7));
+        int[] array = new int[]{3,4,2,1,18,20,5,7,-1,-7};
+//        PrintUtil.printTime();
+//        quickSortWithRecursiveOperation(list);
+//        PrintUtil.printTime();
+//        PrintUtil.print(list);
+        PrintUtil.print(quickSort(array));
     }
 }

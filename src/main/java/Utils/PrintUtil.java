@@ -15,6 +15,14 @@ public class PrintUtil {
         System.out.println();
     }
 
+    public static void print(String message, int[] arr){
+        System.out.print(message + ": ");
+        for(int i : arr){
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+
     public static <T> void print(T[] array){
         for (T element: array){
             System.out.print(element + " ");
