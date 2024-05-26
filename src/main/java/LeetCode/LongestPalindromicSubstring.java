@@ -40,6 +40,8 @@ public class LongestPalindromicSubstring {
         String max = "";
         for (int i = 0; i < s.length(); i++) {
             String s1 = extend(s, i, i), s2 = extend(s, i, i + 1); // s1 for case of odd string length while s2 for even string length case
+            System.out.println("s1:"+s1);
+            System.out.println("s2:"+s2);
             if (s1.length() > max.length()) max = s1;
             if (s2.length() > max.length()) max = s2;
         }
