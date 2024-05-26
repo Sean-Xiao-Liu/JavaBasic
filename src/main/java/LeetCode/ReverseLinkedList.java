@@ -20,7 +20,7 @@ public class ReverseLinkedList {
     /** method 2 recursive method */
     public static ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) return head; // boundary case
-        ListNode temp = reverseList(head.next); // mark the node to be returned，先一直走到最后一个node，再倒回来执行下一行
+        ListNode temp = reverseList(head.next); // mark the node to be returned，先一直走到最后一个node，再倒回来执行下一行 , 所以temp一直是最后一个node的值
 
         head.next.next = head;
         head.next = null;

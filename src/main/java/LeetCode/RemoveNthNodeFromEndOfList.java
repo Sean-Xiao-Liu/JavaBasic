@@ -1,6 +1,8 @@
 package LeetCode;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class RemoveNthNodeFromEndOfList {
 
@@ -80,6 +82,27 @@ public class RemoveNthNodeFromEndOfList {
 //        }
 //    }
 
+    public static ListNode removeNthFromEndTwo(ListNode head, int n){
+
+        Map<Integer, ListNode> map = new HashMap<>();
+        ListNode current = head;
+        int index = 1;
+        while (current != null){
+            map.put(index,current);
+            index++;
+            current = current.next;
+        }
+        int indexToBeRemoved = map.size()-n+1;
+            if (indexToBeRemoved == 1) {
+                return head.next;
+            } else if (indexToBeRemoved+1 <= map.size()){
+                map.get(indexToBeRemoved-1).next = map.get(indexToBeRemoved+1);
+            } else {
+                map.get(indexToBeRemoved-1).next = null;
+            }
+            return head;
+    }
+
 
 
     public static void main(String[] args) {
@@ -89,12 +112,12 @@ public class RemoveNthNodeFromEndOfList {
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = new ListNode(5);
 
-        ListNode temp = head;
-        System.out.println("The length of the linked list is "+lengthOfList(temp));
+//        ListNode temp = head;
+//        System.out.println("The length of the linked list is "+lengthOfList(temp));
 
 
 
-        ListNode result =  removeNthFromEnd(head,3);
+        ListNode result =  removeNthFromEndTwo(head,2);
 
         while(result != null){
             System.out.println(result.val);
