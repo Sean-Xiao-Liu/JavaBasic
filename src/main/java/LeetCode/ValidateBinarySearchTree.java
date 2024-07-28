@@ -1,5 +1,7 @@
 package LeetCode;
 
+import DataStructure.TreeNode;
+
 public class ValidateBinarySearchTree {
 
     // focus on solve the root and use recursion to deal with left and right

@@ -33,13 +33,14 @@ public class BreadthFirstSearch {
          *     8   9    10 11
          * */
         test.largestValuesOfEachLayer(root);
+        test.bfs(root);
 
 
 
     }
 
     public List<Integer> largestValuesOfEachLayer(TreeNode root) {
-        Queue<TreeNode> queue = new LinkedList<TreeNode>(); // notice the queue is an linked List
+        Queue<TreeNode> queue = new LinkedList<TreeNode>(); // notice the queue is a linked List
         List<Integer> result = new ArrayList<Integer>();
 
         if (root == null) return result;
@@ -63,6 +64,33 @@ public class BreadthFirstSearch {
                 }
             }
             result.add(temp);
+        }
+        System.out.println(result);
+        return result;
+    }
+
+    public List<Integer> bfs(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<TreeNode>(); // notice the queue is a linked List
+        List<Integer> result = new ArrayList<Integer>();
+
+        if (root == null) return result;
+
+        queue.offer(root);
+        while (!(queue.isEmpty())) { // while queue is not empty
+            int size = queue.size(); // numebr of nodes in each layer, even the
+
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll(); // pull the head of the queue
+                result.add(node.val);
+                // add the next layer to the queue
+                if (!(node.left == null)) {
+                    queue.offer(node.left);
+                }
+                if (!(node.right == null)) {
+                    queue.offer(node.right);
+                }
+            }
+
         }
         System.out.println(result);
         return result;

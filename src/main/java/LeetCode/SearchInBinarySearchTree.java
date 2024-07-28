@@ -1,5 +1,7 @@
 package LeetCode;
 
+import DataStructure.TreeNode;
+
 public class SearchInBinarySearchTree {
 
     public TreeNode searchBST(TreeNode root, int val) {

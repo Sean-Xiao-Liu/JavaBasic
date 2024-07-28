@@ -6,7 +6,14 @@ public class TreeNode {
     public TreeNode right;
     public TreeNode(int x) { // a constructor, initialize the TreeNode when instance of TreeNode is created
         this.val = x;
-        left = right = null;
+    }
+//
+    public TreeNode() {}
+
+    public TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
     }
 
     @Override

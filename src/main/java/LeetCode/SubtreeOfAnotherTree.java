@@ -2,6 +2,8 @@ package LeetCode;
 
 //import DataStructure.TreeNode;
 
+import DataStructure.TreeNode;
+
 public class SubtreeOfAnotherTree {
     public static boolean isSubtree(TreeNode s, TreeNode t) {
         String stringS = preorder(s,true);
@@ -42,11 +44,11 @@ public class SubtreeOfAnotherTree {
 
 }
 
-class TreeNode{
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode(int val){
-        this.val = val;
-    }
-}
+//class TreeNode{
+//    int val;
+//    TreeNode left;
+//    TreeNode right;
+//    TreeNode(int val){
+//        this.val = val;
+//    }
+//}
