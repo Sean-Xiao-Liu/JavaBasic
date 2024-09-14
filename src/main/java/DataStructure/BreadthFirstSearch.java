@@ -48,7 +48,7 @@ public class BreadthFirstSearch {
         queue.offer(root);
         while (!(queue.isEmpty())) { // while queue is not empty
             int temp = Integer.MIN_VALUE;
-            int size = queue.size(); // numebr of nodes in each layer, even the
+            int size = queue.size(); // number of nodes in each layer
 
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll(); // pull the head of the queue
@@ -77,7 +77,7 @@ public class BreadthFirstSearch {
 
         queue.offer(root);
         while (!(queue.isEmpty())) { // while queue is not empty
-            int size = queue.size(); // numebr of nodes in each layer, even the
+            int size = queue.size(); // number of nodes in each layer, even the
 
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll(); // pull the head of the queue
