@@ -14,17 +14,6 @@ public class NumberOfIslands {
         return count;
     }
 
-//    public boolean flipIslands(int i,int j,char[][] grid){
-//        if(i < 0 || i >= grid.length || j < 0 || j >= grid[i].length) return true;
-//        if(grid[i][j] == '1'){ // the input type is char, not int
-//            grid[i][j] = '0';
-//            flipIslands(i-1,j,grid);
-//            flipIslands(i+1,j,grid);
-//            flipIslands(i,j-1,grid);
-//            flipIslands(i,j+1,grid);
-//        }
-//        return true;
-//    }
 
     public void flipIslands(int i,int j,char[][] grid){ // make the return type to be void instead of boolean
         if (!(i < 0 || i >= grid.length || j < 0 || j >= grid[i].length)) {
