@@ -1,5 +1,6 @@
 package LeetCode;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -68,7 +69,15 @@ public class MeetingRooms {
         return !(a[1] <= b[0] || b[1] <= a[0]);
     }
 
+    public boolean canAttendMeetings4(int[][] intervals) {
+        if(intervals.length == 0||intervals.length ==1) return true;
+        Arrays.sort(intervals, (a,b)-> Integer.compare(a[0],b[0]));
 
+        for(int i = 0; i < intervals.length-1;i++){
+            if(intervals[i][1] > intervals[i+1][0]) return false;
+        }
+        return true;
+    }
 
 
     public static void main(String[] args) {

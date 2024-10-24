@@ -5,18 +5,18 @@ import java.util.*;
 
 /**
  * Given a collection of intervals, merge all overlapping intervals.
- *
+ * <p>
  * Example 1:
- *
+ * <p>
  * Input: [[1,3],[2,6],[8,10],[15,18]]
  * Output: [[1,6],[8,10],[15,18]]
  * Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].
  * Example 2:
- *
+ * <p>
  * Input: [[1,4],[4,5]]
  * Output: [[1,5]]
  * Explanation: Intervals [1,4] and [4,5] are considered overlapping.
- * **/
+ **/
 public class MergeIntervals {
 
     /**
@@ -120,25 +120,26 @@ public class MergeIntervals {
      **/
 
 
-        public int[][] merge2(int[][] intervals) {
-            Collections.sort(Arrays.asList(intervals), new IntervalComparator());
+    public int[][] merge2(int[][] intervals) {
+        Collections.sort(Arrays.asList(intervals), new IntervalComparator());
 
-            LinkedList<int[]> merged = new LinkedList<>(); // use linkedlist here since it implements the deque interface and can invoke getLast method without traversal
-            for (int[] interval : intervals) {
-                // if the list of merged intervals is empty or if the current
-                // interval does not overlap with the previous, simply append it.
-                if (merged.isEmpty() || merged.getLast()[1] < interval[0]) {
-                    merged.add(interval);
-                }
-                // otherwise, there is overlap, so we merge the current and previous
-                // intervals.
-                else {
-                    merged.getLast()[1] = Math.max(merged.getLast()[1], interval[1]);
-                }
+        LinkedList<int[]> merged = new LinkedList<>(); // use linkedlist here since it implements the deque interface and can invoke getLast method without traversal
+        for (int[] interval : intervals) {
+            // if the list of merged intervals is empty or if the current
+            // interval does not overlap with the previous, simply append it.
+            if (merged.isEmpty() || merged.getLast()[1] < interval[0]) {
+                merged.add(interval);
             }
-
-            return merged.toArray(new int[merged.size()][]); // convert a list of array into a 2d array, invoke toArray method and give size of 2 d array
+            // otherwise, there is overlap, so we merge the current and previous
+            // intervals.
+            else {
+                merged.getLast()[1] = Math.max(merged.getLast()[1], interval[1]);
+            }
         }
+
+        return merged.toArray(new int[merged.size()][]); // convert a list of array into a 2d array, invoke toArray method and give size of 2 d array
+    }
+
 
 
     public static void main(String[] args) {
@@ -154,7 +155,7 @@ class IntervalComparator implements Comparator<int[]> {
 //            return a[0] < b[0] ? -1 : a[0] == b[0] ? 0 : 1;
         if (a[0] < b[0]) {
             return -1;
-        } else if (a[0] == b[0]){
+        } else if (a[0] == b[0]) {
             return 0;
         } else {
             return 1;
