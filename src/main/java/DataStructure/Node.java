@@ -18,4 +18,8 @@ public class Node {
         val = _val;
         neighbors = _neighbors;
     }
+
+    public void addNeighbor(Node neighbor) {
+        this.neighbors.add(neighbor);
+    }
 }

@@ -18,6 +18,7 @@ public class RemoveElement {
         return size;
     }
 
+    // another way of two pointers
     public int removeElement2(int[] nums, int val) {
         int count = 0;
 
