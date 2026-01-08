@@ -1,18 +1,19 @@
 package LeetCode.LinkedList;
 
-import DataStructure.SinglyLinkedListNode;
-
 public class ReverseLinkedList {
 
     /** method 1 iterative method */
     public static ListNode reverse(ListNode head){
+        // prev woudl be the last node of the reversed list
+        // so that it should be null
         ListNode prev = null;
         ListNode curr = head;
+        ListNode next;
         while(curr != null){
-            ListNode nextTemp = curr.next;
+            next = curr.next;
             curr.next = prev;
             prev = curr;
-            curr = nextTemp;
+            curr = next;
         }
         return prev;
     }

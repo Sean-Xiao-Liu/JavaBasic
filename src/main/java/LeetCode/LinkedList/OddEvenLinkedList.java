@@ -1,5 +1,27 @@
 package LeetCode.LinkedList;
 
+/***
+ * 
+ * Time Complexity: O(n)
+The algorithm traverses the linked list once:
+The while loop continues as long as even != null && even.next != null
+In each iteration, both odd and even pointers advance by one node
+Every node in the list is visited exactly once
+Where n is the number of nodes in the linked list
+
+Space Complexity: O(1)
+The algorithm uses constant extra space:
+Only three pointer variables are used: odd, even, and evenHead
+No additional data structures are created
+The rearrangement is done in-place by modifying the next pointers of existing nodes
+The space used doesn't scale with the input size
+
+Summary:
+Time: O(n) - single pass through the list
+Space: O(1) - constant space, in-place modification
+ */
+
+
 public class OddEvenLinkedList {
     public ListNode oddEvenList(ListNode head) {
         // boundary cases

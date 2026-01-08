@@ -1,4 +1,4 @@
-//package LeetCode;
+//package LeetCode.Math;
 //
 //import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 //

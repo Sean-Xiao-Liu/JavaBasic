@@ -1,4 +1,4 @@
-//package LeetCode;
+//package LeetCode.Stack;
 //
 //public class MinStack {
 //    /** initialize your data structure here. */
