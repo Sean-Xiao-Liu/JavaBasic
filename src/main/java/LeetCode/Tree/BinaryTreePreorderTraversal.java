@@ -22,6 +22,15 @@ public class BinaryTreePreorderTraversal {
         return result;
     }
 
+
+    public List<Integer> preorderTraversal2(TreeNode root) {
+        if (root == null) return result;
+        result.add(root.val);
+        if(root.left != null) preorderTraversal2(root.left);
+        if(root.right != null) preorderTraversal2(root.right);
+        return result;
+    }
+
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1); // the first node with value 1
         TreeNode left = new TreeNode(2);

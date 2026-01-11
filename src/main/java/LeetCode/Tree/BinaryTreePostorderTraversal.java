@@ -7,12 +7,22 @@ import java.util.List;
 
 public class BinaryTreePostorderTraversal {
     List<Integer> result = new ArrayList<>();
+
     public List<Integer> postorderTraversal(TreeNode root) {
         if(root != null){
             if(root.left != null) postorderTraversal(root.left);
             if(root.right != null) postorderTraversal(root.right);
             result.add(root.val);
         }
+        return result;
+    }
+
+
+    public List<Integer> postorderTraversal2(TreeNode root) {
+        if (root == null) return result;
+        if (root.left != null) postorderTraversal2(root.left);
+        if (root.right != null) postorderTraversal2(root.right);
+        result.add(root.val);
         return result;
     }
 
@@ -31,15 +41,15 @@ public class BinaryTreePostorderTraversal {
         left.right.right = new TreeNode(10);
         right.right.left = new TreeNode(11);
         /*
-         *  the tree looks like:
-         *             1
-         *           /   \
-         *          2     3
-         *        /  \   /  \
-         *       4    5 6    7
-         *      / \    \    /
-         *     8   9    10 11
-         * */
+         * the tree looks like:
+         * 1
+         * / \
+         * 2 3
+         * / \ / \
+         * 4 5 6 7
+         * / \ \ /
+         * 8 9 10 11
+         */
 
         BinaryTreePostorderTraversal test = new BinaryTreePostorderTraversal();
         System.out.println(test.postorderTraversal(root));
