@@ -1,6 +1,8 @@
 package Utils;
 
 import DataStructure.TreeNode;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class BinaryTreeConstructor {
     // Build tree from level-order array representation where null represents missing nodes
@@ -10,7 +12,7 @@ public class BinaryTreeConstructor {
         }
         
         TreeNode root = new TreeNode(levelOrder[0]);
-        java.util.Queue<TreeNode> queue = new java.util.LinkedList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         
         int i = 1;
