@@ -8,7 +8,7 @@ public class TreeNode {
         this.val = x;
     }
 //
-    public TreeNode() {}
+    public TreeNode() {} // default constructor
 
     public TreeNode(int val, TreeNode left, TreeNode right) {
         this.val = val;
