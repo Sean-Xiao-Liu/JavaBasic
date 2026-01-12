@@ -4,6 +4,16 @@ import DataStructure.TreeNode;
 import Utils.BinaryTreeConstructor;
 import java.util.ArrayList;
 import java.util.List;
+/** 
+ * Given the roots of two binary trees root1 and root2, return true if the leaf value sequence is the same, or false otherwise.
+ * A leaf is a node with no children.
+ * Example 1:
+ * Input: root1 = [3,5,1,6,2,9,8,null,null,7,4], root2 = [3,5,1,6,7,4,2,null,null,null,null,null,null,9,8]
+ * Output: true
+ * Example 2:
+ * Input: root1 = [1,2,3], root2 = [1,3,2]
+ * Output: false
+*/
 
 public class LeafSimilarTrees {
 
