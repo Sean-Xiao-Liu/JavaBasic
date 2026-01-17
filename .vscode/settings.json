@@ -7,5 +7,6 @@
         "latex",
         "plaintext",
         "java"
-    ]
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
 }
