@@ -33,7 +33,7 @@ public class StringCompression {
         return s.length();
     }
 
-    public int compress2(char[] chars) {
+    public static int compress2(char[] chars) {
         int ans = 0; // keep track of current position in compressed array
     
         // iterate through input array using i pointer
