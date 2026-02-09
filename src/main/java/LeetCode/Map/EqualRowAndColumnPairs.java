@@ -46,7 +46,7 @@ public class EqualRowAndColumnPairs {
 
         // store each row as a string key with its frequency
         for (int i = 0; i < length; i++) {
-            String key = Arrays.toString(grid[i]);
+            String key = Arrays.toString(grid[i]); // convert row to string to it can be compared with other rows
             rowMap.put(key, rowMap.getOrDefault(key, 0) + 1);
         }
 
@@ -59,6 +59,33 @@ public class EqualRowAndColumnPairs {
             }
             String key = Arrays.toString(col);
             count += rowMap.getOrDefault(key, 0);
+        }
+
+        return count;
+    }
+
+    // method 3: rolling hash - O(n^2) time, O(n) space, avoids string allocation overhead
+    public int equalPairsRollingHash(int[][] grid) {
+        int n = grid.length;
+        Map<Long, Integer> rowMap = new HashMap<>();
+
+        // hash each row using a polynomial rolling hash
+        for (int i = 0; i < n; i++) {
+            long hash = 0;
+            for (int j = 0; j < n; j++) {
+                hash = hash * 100003 + grid[i][j]; // prime multiplier > max value to avoid collisions
+            }
+            rowMap.put(hash, rowMap.getOrDefault(hash, 0) + 1);
+        }
+
+        int count = 0;
+        // hash each column and check against row hashes
+        for (int j = 0; j < n; j++) {
+            long hash = 0;
+            for (int i = 0; i < n; i++) {
+                hash = hash * 100003 + grid[i][j];
+            }
+            count += rowMap.getOrDefault(hash, 0);
         }
 
         return count;
