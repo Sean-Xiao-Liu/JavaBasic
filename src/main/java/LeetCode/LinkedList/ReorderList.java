@@ -2,9 +2,17 @@ package LeetCode.LinkedList;
 
 import java.util.Deque;
 import java.util.LinkedList;
-
+/**
+ * You are given the head of a singly linked-list. The list can be represented as:
+ * L0 → L1 → … → Ln - 1 → Ln
+ * Reorder the list to be on the following form:
+ * L0 → Ln → L1 → Ln - 1 → L2 → Ln - 2 → …
+ * You may not modify the values in the list's nodes. Only nodes themselves may be changed.
+ */
 public class ReorderList {
     public static void reorderList(ListNode head) {
+        // use deque to store the nodes
+        // deque is a double ended queue, so we can add and remove nodes from both ends
         Deque<ListNode> deque = new LinkedList<>();
         while (head != null){
             deque.addLast(head);
@@ -13,9 +21,10 @@ public class ReorderList {
         int count = 0;
         ListNode current = new ListNode(0);
         while (!deque.isEmpty()){
+            // if count is even, remove the first node from the deque and add it to the current node
             if(count % 2 == 0){
                 current.next = deque.removeFirst();
-                if ( count == 0) head = current.next;
+                if ( count == 0) head = current.next; // if count is 0, set the head to the current node, which is the first node of updated list
             } else {
                 current.next = deque.removeLast();
             }
