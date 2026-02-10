@@ -51,4 +51,13 @@ public class PrintUtil {
     public static void print(String logs){
         System.out.println(logs);
     }
+
+    public static <T> void printMatrix(int[][] grid){
+        for (int[] row : grid) {
+            for (int element : row) {
+                System.out.print(element + " ");
+            }
+            System.out.println();
+        }
+    }
 }
